@@ -461,6 +461,14 @@
     @apply font-semibold text-[#111];
   }
 
+  /* Post markdown styling for GitHub section */
+  .post .markdown {
+    color: hsl(var(--text-secondary));
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 2px;
+  }
+
   /* Bio text styles */
   .bio {
     @apply text-[#666] text-[14px] leading-relaxed;
