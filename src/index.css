@@ -1,0 +1,540 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+
+    --primary: 20 90% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 13%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 13%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 20 90% 48%;
+
+    --radius: 0.5rem;
+
+    /* Custom design tokens */
+    --link-color: 20 90% 48%;
+    --text-primary: 0 0% 13%;
+    --text-secondary: 0 0% 35%;
+    --text-muted: 0 0% 55%;
+    --section-spacing: 3rem;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 20 90% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 20 90% 55%;
+
+    --link-color: 20 90% 55%;
+    --text-primary: 0 0% 95%;
+    --text-secondary: 0 0% 75%;
+    --text-muted: 0 0% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  a {
+    @apply text-primary transition-colors;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+@layer components {
+  /* Header container */
+  .header {
+    @apply flex flex-col sm:flex-row gap-6 items-start sm:items-center mb-12;
+  }
+
+  .header-row {
+    @apply flex-1;
+    margin-top: 0;
+  }
+
+  @media (min-width: 640px) {
+    .header-row {
+      margin-top: 0;
+    }
+  }
+
+  /* Profile image skeuomorphic container */
+  .dp-outer-container {
+    @apply relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  @media (min-width: 640px) {
+    .dp-outer-container {
+      flex-direction: row;
+      gap: 1.5rem;
+    }
+  }
+
+  .dp-container {
+    @apply relative;
+    transform: scale(1.06) translateZ(0);
+    width: 75px;
+    height: 75px;
+  }
+
+  /* The skeuomorphic circle with complex gradients and shadows */
+  .dp-circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    z-index: 1;
+    background: 
+      radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8) 0%, transparent 70%),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+    box-shadow: 
+      inset 0 1px 0 rgba(255, 255, 255, 0.6),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.2),
+      rgba(26, 26, 26, 0.36) 0px 6px 4px -1px,
+      0px 0px 0px 3px rgba(255, 255, 255, 0.1);
+  }
+
+  .dp-container .image {
+    position: relative;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 10;
+    border: 3px solid transparent;
+  }
+
+  /* Container for the buttons */
+  .social {
+    display: flex;
+    gap: 8px;
+    padding-top: 10px;
+  }
+
+  .social a {
+    display: inline-block;
+  }
+
+  /* The tactile button style - exact from simple.css */
+  .btn {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    max-height: 28px;
+    min-height: 28px;
+    min-width: 28px;
+    padding: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+    border-radius: 8px;
+    background-color: #fff;
+    /* Simulated surface lighting */
+    background-image: radial-gradient(circle closest-corner at 50% 66%, rgba(26, 26, 26, .08), hsla(0, 0%, 100%, .01));
+    /* The 6-layer shadow stack for depth */
+    box-shadow: 
+      inset 0 0 0 1px hsla(0, 0%, 100%, .4), 
+      0 0 0 1px rgba(26, 26, 26, .04), 
+      0 1px 2px 1px hsla(0, 0%, 94%, .2), 
+      0 2px 4px 0 hsla(0, 0%, 81%, .2), 
+      0 2px 1px 0 rgba(26, 26, 26, .06), 
+      0 2px 4px -2px rgba(26, 26, 26, .2);
+    transform: translate(0);
+    transition: background-position .4s ease, color .4s ease, transform .12s ease-out, box-shadow .12s ease-in-out;
+    color: #444;
+    font-family: SF Pro Text, system-ui;
+    font-weight: 500;
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .btn:hover {
+    text-decoration: none; /* Ensure no underline on hover */
+  }
+  
+  .btn:active {
+    text-decoration: none; /* Ensure no underline when active */
+  }
+
+  /* "Lift" effect on hover */
+  .btn:hover {
+    background-image: radial-gradient(circle farthest-side at 50% 72%, rgba(26, 26, 26, .12), hsla(0, 0%, 100%, .01));
+    box-shadow: 
+      inset 0 0 0 0 hsla(0, 0%, 100%, .01), 
+      0 0 0 1px rgba(26, 26, 26, .06), 
+      0 1px 2px 1px hsla(0, 0%, 94%, .4), 
+      0 2px 4px 0 hsla(0, 0%, 81%, .2), 
+      0 3px 1px 0 rgba(26, 26, 26, .08), 
+      0 2px 4px -2px rgba(26, 26, 26, .32);
+    transform: translateY(-.5px);
+    color: #1a1a1a;
+  }
+
+  /* "Pressed" effect on click */
+  .btn:active {
+    box-shadow: 
+      inset 0 0 0 20px hsla(0, 0%, 100%, .08), 
+      0 0 0 1px rgba(26, 26, 26, .12), 
+      0 2px 2px 1px rgba(26, 26, 26, .04), 
+      0 2px 4px 0 hsla(0, 0%, 81%, .2), 
+      0 3px 1px 0 rgba(26, 26, 26, .01), 
+      0 2px 4px -2px rgba(26, 26, 26, .02);
+    transform: translateY(.5px);
+  }
+
+  /* Fix icon centering - neutralize font baseline alignment */
+  .btn i {
+    display: block;        /* Removes baseline/inline alignment issues */
+    line-height: 1;        /* Ensures the box is exactly the height of the icon */
+    font-size: 14px;       /* Matches the original site's scale */
+    margin: 0;             /* Prevents any inherited margins */
+  }
+
+  /* Link style with custom underline and hover effect - exact from simple.css */
+  .link {
+    position: relative;
+    display: inline-flex;
+    padding: 4px 0;
+    margin: -2px 0;
+    color: #363636;
+    font-weight: 500;
+    text-decoration: none;
+    /* TEXT COLOR TRANSITION */
+    transition: color 50ms cubic-bezier(.55, .055, .675, .19), background-color 50ms ease, margin 50ms ease, box-shadow 50ms ease, padding 50ms ease;
+  }
+
+  /* THE UNDERLINE */
+  .link:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 4px;
+    height: 1px;
+    background-color: #ddd;
+    /* THE TRANSITION */
+    transition: background-color .2s ease-out, bottom .2s ease-out, transform .4s cubic-bezier(.785, .135, .15, .86), height .1s ease-out;
+  }
+
+  /* THE BACKGROUND BLOOP */
+  .link:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10px;
+    bottom: 6px;
+    background-color: #0080ff00; /* Transparent blue */
+    border-radius: .5px;
+    /* THE TRANSITION */
+    transition: border-radius .1s ease, background-color 50ms cubic-bezier(.215, .61, .355, 1), left 50ms ease, right 50ms ease, top 50ms ease, bottom 50ms ease;
+  }
+
+  /* HOVER EFFECTS */
+  .link:hover {
+    color: #0080ff;
+  }
+
+  .link:hover:after {
+    background-color: #0080ff29;
+    bottom: 4px;
+    height: 1.5px;
+  }
+
+  .link:hover:before {
+    left: -2px;
+    right: -2px;
+    top: 6px;
+    bottom: 5px;
+    border-radius: 2px;
+    background-color: #0080ff05;
+  }
+
+  .link.ext {
+    @apply text-[#0070f3] hover:underline transition-colors;
+  }
+
+  /* Section title with Font Awesome icon */
+  .section-title {
+    @apply text-base font-medium flex items-center gap-2;
+  }
+
+  .section-title i {
+    @apply text-[10px];
+  }
+
+  /* Article/Book/Job card styles with hover animations - exact from simple.css */
+  .article {
+    @apply block;
+  }
+
+  /* Base Container Styles */
+  .book, .job {
+    position: relative;
+    min-height: 58px;
+    max-height: 58px;
+    min-width: 58px;
+    max-width: 58px;
+    margin-right: 16px;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .32), 0 1px 2px 1px rgba(0, 0, 0, .12), 0 2px 2px -1px rgba(0, 0, 0, .16);
+    /* THE TRANSITION */
+    transition: box-shadow .25s cubic-bezier(.19, 1, .22, 1);
+  }
+
+  .book .cover,
+  .job .cover {
+    @apply w-full h-auto rounded object-cover;
+  }
+
+  /* Inner Overlay Elements */
+  .shadow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    max-width: 48px;
+    min-width: 48px;
+    z-index: 1;
+    box-shadow: 2px 0 2px 0 rgba(0, 0, 0, .2), 1px 0 1px 0 rgba(0, 0, 0, .1), 2px 0 1px -2px rgba(0, 0, 0, .05);
+    /* THE TRANSITION */
+    transition: opacity .5s ease, transform .2s cubic-bezier(.25, .46, .45, .94);
+  }
+
+  .drop-shadow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    min-width: 12px;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    backdrop-filter: blur(4px);
+    /* THE TRANSITION */
+    transition: opacity .8s cubic-bezier(.165, .84, .44, 1), transform .2s ease;
+  }
+
+  .chevron-right {
+    position: absolute;
+    right: 1.5px;
+    opacity: 0;
+    transform: translateX(-1px);
+    /* THE TRANSITION */
+    transition: opacity .2s ease, filter .2s ease, transform .2s ease;
+  }
+
+  /* HOVER STATES (Triggered by parent .article) */
+  .article:hover .book {
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, .6), 0 4px 2px -2px rgba(0, 0, 0, .8);
+  }
+
+  .article:hover .job {
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, .6), 0 4px 2px -2px rgba(0, 0, 0, .8);
+  }
+
+  .article:hover .shadow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .article:hover .drop-shadow {
+    opacity: .75;
+    transform: translateX(0);
+  }
+
+  .article:hover .chevron-right {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Post/Content styles */
+  .post {
+    @apply mt-2;
+  }
+
+  .post h4 {
+    @apply text-base font-semibold text-[#111] mb-1;
+  }
+
+  .post p {
+    @apply text-sm text-[#666] leading-relaxed;
+  }
+
+  /* Writing section styles */
+  .writing {
+    @apply space-y-4;
+  }
+
+  /* Section header with title and link */
+  .title {
+    @apply flex items-center justify-between mb-4 pb-1;
+  }
+
+  .title h3 {
+    @apply text-base font-medium flex items-center gap-2;
+  }
+
+  .title h3 i {
+    @apply text-[10px];
+  }
+
+  /* Markdown content styles */
+  .markdown {
+    @apply text-sm text-[#666] leading-relaxed;
+  }
+
+  .markdown a {
+    @apply text-[#0070f3] hover:underline;
+  }
+
+  .markdown b {
+    @apply font-semibold text-[#111];
+  }
+
+  /* Bio text styles */
+  .bio {
+    @apply text-[#666] text-[14px] leading-relaxed;
+  }
+
+  .bio p {
+    @apply mb-1;
+  }
+
+
+  /* Legacy card styles for compatibility */
+  .section-header {
+    @apply flex items-center justify-between mb-4 pb-1;
+  }
+
+  .section-link {
+    @apply text-sm text-muted-foreground hover:text-primary transition-colors;
+  }
+
+  .card-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+  }
+
+  .content-card {
+    @apply flex gap-4 cursor-pointer;
+    position: relative;
+    text-decoration: none;
+  }
+
+  .card-image {
+    @apply w-16 h-16 rounded-lg object-cover flex-shrink-0;
+  }
+
+  .card-title {
+    @apply font-semibold text-[#111] transition-colors text-sm;
+    position: relative;
+  }
+
+  .card-description {
+    @apply text-sm text-[#666] leading-relaxed mt-1;
+  }
+
+  /* Link hover animation for card titles */
+  .content-card .card-title::before {
+    content: "";
+    position: absolute;
+    left: -4px;
+    right: -4px;
+    top: 2px;
+    bottom: 2px;
+    background-color: #0080ff00; /* Transparent blue */
+    border-radius: .5px;
+    transition: border-radius .1s ease, background-color 50ms cubic-bezier(.215, .61, .355, 1), left 50ms ease, right 50ms ease, top 50ms ease, bottom 50ms ease;
+    z-index: -1;
+  }
+
+  .content-card:hover .card-title {
+    color: #0080ff;
+  }
+
+  .content-card:hover .card-title::before {
+    left: -6px;
+    right: -6px;
+    top: -2px;
+    bottom: -2px;
+    border-radius: 2px;
+    background-color: #0080ff05;
+  }
+
+  .social-icon {
+    @apply w-5 h-5 text-muted-foreground hover:text-foreground transition-colors;
+  }
+
+  .logo-image {
+    @apply w-12 h-12 rounded-lg object-contain flex-shrink-0 bg-muted p-1;
+  }
+}
