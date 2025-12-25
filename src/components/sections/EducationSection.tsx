@@ -3,9 +3,9 @@ import CompanyCard from "../CompanyCard";
 
 const educationItems = [
   {
-    logo: "https://debarghyadas.com/img/landing/work/cornell.webp",
+    logo: "https://brand.berkeley.edu/wp-content/uploads/2024/08/cal-script-thumbnail-2048x1311.png",
     company: "University of California, Berkeley",
-    description: "Top 10% of class. Bachelors and masters in Computer Science in 3.5yrs. Published research in robotics and linguistics.",
+    description: "Bachelors in Data Science [DE: Machine Learning], and Applied Mathematics. Expected Graduation: 2028.",
     href: "https://www.berkeley.edu/",
   },
 ];
@@ -16,12 +16,15 @@ const EducationSection = () => {
       <SectionHeader
         icon={<i className="fa fa-graduation-cap" style={{ fontSize: '10px' }}></i>}
         title="Education"
-        linkText="View all"
+        linkText="LinkedIn"
         linkHref="https://www.linkedin.com/in/avaneesh-joshi/"
       />
       <div className="card-grid">
         {educationItems.map((item) => (
-          <CompanyCard key={item.company} {...item} />
+          /* This wrapper ensures only education spans both columns */
+          <div key={item.company} className="col-span-full">
+            <CompanyCard {...item} />
+          </div>
         ))}
       </div>
     </section>

@@ -3,7 +3,7 @@ import InvestingSection from "@/components/sections/InvestingSection";
 import CareerSection from "@/components/sections/CareerSection";
 import EducationSection from "@/components/sections/EducationSection";
 import SpeakingSection from "@/components/sections/SpeakingSection";
-import NewsSection from "@/components/sections/NewsSection";
+// import NewsSection from "@/components/sections/NewsSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import GithubSection from "@/components/sections/GithubSection";
 
@@ -23,10 +23,10 @@ const Index = () => {
           <ProjectsSection />
           <GithubSection />
           <SpeakingSection />
-          <NewsSection />
+          {/* <NewsSection /> */}
           <footer className="text-center text-sm text-muted-foreground pt-8 border-t border-border">
             You can view the older version of this website{" "}
-            <a href="https://debarghyadas.com/old.html">here</a>.
+            <a href="https://avxneeshjoshi.vercel.app">here</a>.
           </footer>
         </div>
       </main>

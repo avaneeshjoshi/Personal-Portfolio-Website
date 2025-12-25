@@ -500,6 +500,26 @@
 
   .card-image {
     @apply w-16 h-16 rounded-lg object-cover flex-shrink-0;
+    /* Drop shadow similar to buttons */
+    box-shadow: 
+      0 0 0 1px rgba(26, 26, 26, .04), 
+      0 1px 2px 1px hsla(0, 0%, 94%, .2), 
+      0 2px 4px 0 hsla(0, 0%, 81%, .2), 
+      0 2px 1px 0 rgba(26, 26, 26, .06), 
+      0 2px 4px -2px rgba(26, 26, 26, .2);
+    transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;
+  }
+  
+  /* Hover effect on card images - enhanced shadow for clearer animation */
+  .content-card:hover .card-image {
+    box-shadow: 
+      0 0 0 1px rgba(26, 26, 26, .08), 
+      0 2px 4px 1px hsla(0, 0%, 94%, .5), 
+      0 4px 8px 0 hsla(0, 0%, 81%, .3), 
+      0 4px 2px 0 rgba(26, 26, 26, .12), 
+      0 4px 8px -2px rgba(26, 26, 26, .4),
+      0 6px 12px -4px rgba(26, 26, 26, .15);
+    transform: scale(1.02);
   }
 
   .card-title {
@@ -508,7 +528,7 @@
   }
 
   .card-description {
-    @apply text-sm text-[#666] leading-relaxed mt-1;
+    @apply text-xs text-[#666] leading-relaxed mt-1;
   }
 
   /* Link hover animation for card titles */

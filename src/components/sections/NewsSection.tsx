@@ -44,8 +44,8 @@ const NewsSection = () => {
   return (
     <section className="mb-12">
       <SectionHeader
-        icon={<i className="fa-solid fa-trophy"></i>}
-        title="News"
+        icon={<i className="fa-solid fa-bookmark"></i>}
+        title="Publications"
         linkText="View all"
         linkHref="https://www.google.com/search?q=(debarghya+das)+OR+(deedy+das)&tbm=nws"
       />
