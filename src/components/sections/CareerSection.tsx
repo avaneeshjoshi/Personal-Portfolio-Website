@@ -3,7 +3,7 @@ import CareerCard from "../CareerCard";
 
 const careerItems = [
   {
-    logo: "https://media.licdn.com/dms/image/v2/C560BAQE4zbXNr2R6ng/company-logo_200_200/company-logo_200_200/0/1635873578811/dasion_logo?e=1767830400&v=beta&t=ZCG8DEkObjiU9b1G6VX1SRnTARyWq8I7DPx5Xz_qQrA",
+    logo: "https://fmanavehsizxybddlxtr.supabase.co/storage/v1/object/sign/Portfolio/dasion_logo.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZTc3ZjM5NS02NTdlLTQyMTMtOWQ4NS0zMTgyNWJlYzJlMzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8vZGFzaW9uX2xvZ28uanBlZyIsImlhdCI6MTc2Nzg4NTQxMywiZXhwIjoxODk0MDI5NDEzfQ.o6E7hanHozkXVUKCAhhLuZcOmyu2pE55qZk5dghiwCg",
     company: "Dasion",
     title: "Machine Learning Engineering Intern",
     description: "End-to-end vision agent workflows with image parsing, matrix encoding, and real-time monitoring",
@@ -11,7 +11,7 @@ const careerItems = [
     startDate: "Sep 2025",
   },
   {
-    logo: "https://media.licdn.com/dms/image/v2/C4D0BAQGyQ7lqORVCaw/company-logo_200_200/company-logo_200_200/0/1630507101690/nyris_logo?e=1767830400&v=beta&t=-dD4hUtL5KNTjQLM5dcgZVNdIL8jnQ6fThw9oZ2AUn8",
+    logo: "https://fmanavehsizxybddlxtr.supabase.co/storage/v1/object/sign/Portfolio/nyris_logo.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZTc3ZjM5NS02NTdlLTQyMTMtOWQ4NS0zMTgyNWJlYzJlMzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8vbnlyaXNfbG9nby5qcGVnIiwiaWF0IjoxNzY3ODg1NDc0LCJleHAiOjE4OTQwMjk0NzR9.APo0IEWo7NHrBE9lxisBheuKJB36O3PZGNOA_fp3zUU",
     company: "nyris GmbH",
     title: "Machine Learning Engineering Intern",
     description: "Large-scale prompt benchmarking and OCR evaluation pipelines for enterprise image-search",
@@ -20,7 +20,7 @@ const careerItems = [
     endDate: "Aug 2025",
   },
   {
-    logo: "https://media.licdn.com/dms/image/v2/D4D0BAQG753JpYrclFA/company-logo_200_200/B4DZUwHEj5GkAI-/0/1740268915628/revolaai_logo?e=1767830400&v=beta&t=qr6Aj4DC9APnK0xsH_BQN0HjaSbAEAoUJ0yIDVmib6w",
+    logo: "https://fmanavehsizxybddlxtr.supabase.co/storage/v1/object/sign/Portfolio/revolaai_logo.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZTc3ZjM5NS02NTdlLTQyMTMtOWQ4NS0zMTgyNWJlYzJlMzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8vcmV2b2xhYWlfbG9nby5qcGVnIiwiaWF0IjoxNzY3ODg1NDk2LCJleHAiOjE4OTQwMjk0OTZ9.tZm61DgyK5O4QmK8tAGeyUfY8_PGc_K55oEBNmQ6Y9M",
     company: "Revola AI",
     title: "Software Engineering Intern",
     description: "OAuth scheduling and session-verification pipelines for AI-driven product demos across Zoom/Google Meets",
@@ -29,7 +29,7 @@ const careerItems = [
     endDate: "Apr 2025",
   },
   {
-    logo: "https://media.licdn.com/dms/image/v2/C4D0BAQFDQdep839VZg/company-logo_200_200/company-logo_200_200/0/1631304863996?e=1767830400&v=beta&t=XLb7y-upM_TKaRlibgiaLobMyGmzhic8D-q-Gx55p4U",
+    logo: "https://fmanavehsizxybddlxtr.supabase.co/storage/v1/object/sign/Portfolio/bitwise_logo.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZTc3ZjM5NS02NTdlLTQyMTMtOWQ4NS0zMTgyNWJlYzJlMzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8vYml0d2lzZV9sb2dvLmpwZWciLCJpYXQiOjE3Njc4ODU0MzUsImV4cCI6MTc2ODIzMTAzNX0._6uNovdz7fRP-uss-3G34aXjJr2I7RIJVuKGwGACT_E",
     company: "bitWise Academy",
     title: "Machine Learning Engineering Intern",
     description: "BERT-NLP + HMM for adaptive quiz optimization; motion+content GAN research for interactive educational sims",
