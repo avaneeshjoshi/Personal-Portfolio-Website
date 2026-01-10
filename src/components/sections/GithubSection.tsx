@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SectionHeader from "../SectionHeader";
+// 1. Import the Calendar component
+import { GitHubCalendar } from 'react-github-calendar';
 
 interface GithubEvent {
   id: string;
@@ -19,6 +21,19 @@ const GithubSection: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const username = "avaneeshjoshi";
 
+  // 2. Define the GitHub dark theme colors
+  // Custom color ramp from light gray to vibrant green
+  const githubTheme = {
+    dark: [
+      '#ebedf0', // Level 0: Your light gray (Base/Empty)
+      '#c6e48b', // Level 1
+      '#7bc96f', // Level 2
+      '#239a3b', // Level 3
+      '#196127'  // Level 4
+    ],
+    light: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
+  };
+
   useEffect(() => {
     const fetchGithubData = async () => {
       try {
@@ -29,7 +44,6 @@ const GithubSection: React.FC = () => {
           headers.Authorization = `token ${token}`;
         }
 
-        // BACK TO USER-SPECIFIC ENDPOINT: This is best for a personal portfolio
         const response = await fetch(
           `https://api.github.com/users/${username}/events?per_page=50`, 
           { headers }
@@ -39,7 +53,6 @@ const GithubSection: React.FC = () => {
 
         const data: GithubEvent[] = await response.json();
 
-        // 1. Check if your commit is older than 30 days
         const thirtyDaysAgo = new Date();
         thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
 
@@ -48,9 +61,6 @@ const GithubSection: React.FC = () => {
             const eventDate = new Date(event.created_at);
             const isRecent = eventDate > thirtyDaysAgo;
             const isCorrectType = event.type === "PushEvent" || event.type === "CreateEvent";
-            
-            // LOGIC FIX: If you want to see that ONE commit regardless of date, 
-            // remove "isRecent" from this return statement temporarily to test.
             return isRecent && isCorrectType;
           })
           .slice(0, 5);
@@ -93,7 +103,24 @@ const GithubSection: React.FC = () => {
         linkHref={`https://github.com/${username}`}
       />
 
-      <div className="writing mt-6 space-y-8">
+      {/* 3. The Contribution Graph Wrapper */}
+      <div className="mt-6 p-4 rounded-xl border border-border bg-card/50 overflow-hidden shadow-sm github-calendar-wrapper">
+        <GitHubCalendar 
+          username={username}
+          theme={githubTheme}
+          colorScheme="dark"
+          blockSize={12}
+          blockMargin={4}
+          fontSize={12}
+        />
+      </div>
+
+      {/* Divider / Label */}
+      <div className="mt-10 mb-4 text-[10px] uppercase tracking-[0.2em] font-bold opacity-30">
+        Recent Activity Feed
+      </div>
+
+      <div className="writing space-y-8">
         {loading ? (
           <div className="bio animate-pulse">Syncing with GitHub...</div>
         ) : events.length > 0 ? (

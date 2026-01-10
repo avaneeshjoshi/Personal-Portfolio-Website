@@ -565,4 +565,38 @@
   .logo-image {
     @apply w-12 h-12 rounded-lg object-contain flex-shrink-0 bg-muted p-1;
   }
+
+  /* GitHub Calendar square borders - add borders to activity squares (levels 1-4) */
+  .github-calendar-wrapper svg rect {
+    stroke: transparent; /* Default: no border */
+  }
+
+  /* Add borders to empty squares (Level 0) */
+  .github-calendar-wrapper svg rect[fill="#ebedf0"] {
+    stroke: rgba(0, 0, 0, 0.1); /* Subtle dark border to define the light gray */
+    stroke-width: 1px;
+  }
+
+  /* Add borders to colored activity squares */
+  .github-calendar-wrapper svg rect[fill="#c6e48b"],
+  .github-calendar-wrapper svg rect[fill="#7bc96f"],
+  .github-calendar-wrapper svg rect[fill="#239a3b"],
+  .github-calendar-wrapper svg rect[fill="#196127"],
+  .github-calendar-wrapper svg rect[fill="rgb(198, 228, 139)"],
+  .github-calendar-wrapper svg rect[fill="rgb(123, 201, 111)"],
+  .github-calendar-wrapper svg rect[fill="rgb(35, 154, 59)"],
+  .github-calendar-wrapper svg rect[fill="rgb(25, 97, 39)"] {
+    stroke: #595959;
+    stroke-width: 0.5px;
+    rx: 2px; /* Subtle rounding to match your UI */
+  }
+
+  /* If the library renders as divs instead of SVG rects */
+  .github-calendar-wrapper [data-level="1"],
+  .github-calendar-wrapper [data-level="2"],
+  .github-calendar-wrapper [data-level="3"],
+  .github-calendar-wrapper [data-level="4"] {
+    border: 0.5px solid #595959;
+    border-radius: 2px;
+  }
 }
