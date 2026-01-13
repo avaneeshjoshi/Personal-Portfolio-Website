@@ -29,7 +29,7 @@ const careerItems = [
     endDate: "Apr 2025",
   },
   {
-    logo: "https://fmanavehsizxybddlxtr.supabase.co/storage/v1/object/sign/Portfolio/bitwise_logo.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZTc3ZjM5NS02NTdlLTQyMTMtOWQ4NS0zMTgyNWJlYzJlMzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8vYml0d2lzZV9sb2dvLmpwZWciLCJpYXQiOjE3Njc4ODU0MzUsImV4cCI6MTc2ODIzMTAzNX0._6uNovdz7fRP-uss-3G34aXjJr2I7RIJVuKGwGACT_E",
+    logo: "https://fmanavehsizxybddlxtr.supabase.co/storage/v1/object/sign/Portfolio/bitwise_logo.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZTc3ZjM5NS02NTdlLTQyMTMtOWQ4NS0zMTgyNWJlYzJlMzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8vYml0d2lzZV9sb2dvLmpwZWciLCJpYXQiOjE3NjgzMjI4MDksImV4cCI6MTg5NDQ2NjgwOX0.K5tAB5bAm_ZR1tO_2bu_lwvkLVSypi2hmOfWhHn0txo",
     company: "bitWise Academy",
     title: "Machine Learning Engineering Intern",
     description: "BERT-NLP + HMM for adaptive quiz optimization; motion+content GAN research for interactive educational sims",
