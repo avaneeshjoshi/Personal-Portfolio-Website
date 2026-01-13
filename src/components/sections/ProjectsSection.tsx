@@ -5,7 +5,7 @@ const projectItems = [
   {
     image: "https://cdn2.steamgriddb.com/icon/066e25a0712b306a9b95230f6ec4a051.ico",
     title: "Balatro-RL",
-    description: "RLHF agent for Balatro using PPO, with real-time state extraction via LÖVE2D engine",
+    description: "RL agent for Balatro using PPO, with real-time state extraction via LÖVE2D engine",
     href: "https://github.com/avaneeshjoshi/Balatro-RL",
   },
   {
