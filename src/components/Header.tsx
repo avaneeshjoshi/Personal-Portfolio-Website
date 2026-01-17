@@ -6,7 +6,7 @@ const Header = () => {
         <div className="dp-container">
           <div className="dp-circle" /> {/* This creates the 3D depth and shadows */}
           <img
-            src="https://media.licdn.com/dms/image/v2/D5603AQHnK7jGXwRgjQ/profile-displayphoto-crop_800_800/B56ZtQFCMCJoAI-/0/1766575056011?e=1768435200&v=beta&t=0ztkwVyWUhexJgKezirnDDJScXgMuViAhhqqo0rJUWI"
+            src="https://fmanavehsizxybddlxtr.supabase.co/storage/v1/object/sign/Portfolio/avaneeshjoshi%20headshot.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZTc3ZjM5NS02NTdlLTQyMTMtOWQ4NS0zMTgyNWJlYzJlMzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8vYXZhbmVlc2hqb3NoaSBoZWFkc2hvdC5qcGVnIiwiaWF0IjoxNzY4NjcxOTIxLCJleHAiOjE5MjYzNTE5MjF9.R1UP2HmCY-rK7Ql_p96MuSJ1fQFm0ymzT4POHXB6vlo"
             alt="Avaneesh Joshi"
             className="image" // Image fits exactly inside the 3px border
           />
