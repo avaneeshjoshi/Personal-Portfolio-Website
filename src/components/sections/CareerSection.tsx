@@ -2,6 +2,22 @@ import SectionHeader from "../SectionHeader";
 import CareerCard from "../CareerCard";
 
 const careerItems = [
+  // {
+  //   logo: "https://fmanavehsizxybddlxtr.supabase.co/storage/v1/object/sign/Portfolio/webai_logo.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZTc3ZjM5NS02NTdlLTQyMTMtOWQ4NS0zMTgyNWJlYzJlMzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8vd2ViYWlfbG9nby5wbmciLCJpYXQiOjE3Njk2MzI4MDQsImV4cCI6MTk1ODg0ODgwNH0.ofDLR9jV53-P85hc70v9bbRDiAQfUoZXtGJz4_2ojM0",
+  //   company: "WebAI",
+  //   title: "Machine Learning Engineering Intern",
+  //   description: "$2.5B valuation; working on SLM optimization and quantization @ Intelligence Labs, advised by Dr. P.J. Maykish",
+  //   href: "https://www.webai.com/",
+  //   startDate: "May 2026",
+  // },
+  // {
+  //   logo: "https://fmanavehsizxybddlxtr.supabase.co/storage/v1/object/sign/Portfolio/vibrant_logo.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZTc3ZjM5NS02NTdlLTQyMTMtOWQ4NS0zMTgyNWJlYzJlMzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8vdmlicmFudF9sb2dvLnBuZyIsImlhdCI6MTc2OTYzMjc3MCwiZXhwIjoxOTU4ODQ4NzcwfQ.WzulO2tmwnre_npKHyeSByplFmFFqNtPqnFG5eVBQlc",
+  //   company: "Vibrant Practice",
+  //   title: "Software Engineering Intern",
+  //   description: "End-to-end vision agent workflows with image parsing, matrix encoding, and real-time monitoring",
+  //   href: "https://www.vibrantpractice.com/",
+  //   startDate: "Feb 2026",
+  // },
   {
     logo: "https://fmanavehsizxybddlxtr.supabase.co/storage/v1/object/sign/Portfolio/dasion_logo.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZTc3ZjM5NS02NTdlLTQyMTMtOWQ4NS0zMTgyNWJlYzJlMzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8vZGFzaW9uX2xvZ28uanBlZyIsImlhdCI6MTc2Nzg4NTQxMywiZXhwIjoxODk0MDI5NDEzfQ.o6E7hanHozkXVUKCAhhLuZcOmyu2pE55qZk5dghiwCg",
     company: "Dasion",
@@ -9,6 +25,7 @@ const careerItems = [
     description: "End-to-end vision agent workflows with image parsing, matrix encoding, and real-time monitoring",
     href: "https://www.data-to-decision.com/",
     startDate: "Sep 2025",
+    endDate: "Jan 2025",
   },
   {
     logo: "https://fmanavehsizxybddlxtr.supabase.co/storage/v1/object/sign/Portfolio/nyris_logo.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZTc3ZjM5NS02NTdlLTQyMTMtOWQ4NS0zMTgyNWJlYzJlMzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8vbnlyaXNfbG9nby5qcGVnIiwiaWF0IjoxNzY3ODg1NDc0LCJleHAiOjE4OTQwMjk0NzR9.APo0IEWo7NHrBE9lxisBheuKJB36O3PZGNOA_fp3zUU",
