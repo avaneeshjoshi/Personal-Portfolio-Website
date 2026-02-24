@@ -15,7 +15,7 @@ const careerItems = [
     logo: "https://fmanavehsizxybddlxtr.supabase.co/storage/v1/object/sign/Portfolio/lg_nova_logo.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZTc3ZjM5NS02NTdlLTQyMTMtOWQ4NS0zMTgyNWJlYzJlMzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8vbGdfbm92YV9sb2dvLmpwZWciLCJpYXQiOjE3NzE5MjY0OTMsImV4cCI6MTg5ODA3MDQ5M30.cF7K7M5nL-DbWFt3HE6ImQIh_Y_wsxSFPvwK5Y9cwwU",
     company: "LG Electronics",
     title: "Software Engineer (Contract)",
-    description: "Engineering Graph-Augmented RAG Systems for Venture Ops @ LG NOVA ($100M+ Venture Studio + Global CVC)",
+    description: "Engineering GraphRAG Systems for Venture Ops @ LG NOVA ($100M+ Venture Studio + Global CVC)",
     href: "https://www.lgnova.com/",
     startDate: "Jan 2026",
   },
