@@ -5,7 +5,7 @@ const careerItems = [
    {
      logo: "https://fmanavehsizxybddlxtr.supabase.co/storage/v1/object/sign/Portfolio/webai_logo.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZTc3ZjM5NS02NTdlLTQyMTMtOWQ4NS0zMTgyNWJlYzJlMzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8vd2ViYWlfbG9nby5wbmciLCJpYXQiOjE3Njk2MzI4MDQsImV4cCI6MTk1ODg0ODgwNH0.ofDLR9jV53-P85hc70v9bbRDiAQfUoZXtGJz4_2ojM0",
      company: "WebAI",
-     title: "Machine Learning Engineering Intern",
+     title: "AI Engineering Intern",
      description: "$2.5B valuation; working on SLM optimization and quantization @ Intelligence Labs, advised by Dr. P. J. Maykish",
      href: "https://www.webai.com/",
      startDate: "Feb 2026",
