@@ -20,14 +20,22 @@ const Header = () => {
 
         <div className="bio">
           <p>
-            Sophomore at{" "}
+            Junior at{" "}
             <a href="https://www.linkedin.com/in/avaneesh-joshi/" target="_blank" rel="noopener noreferrer" className="link">
               UC Berkeley
             </a>{" "}
             specializing in full-stack applications and AI/ML systems.
           </p>
           <p>
-            Previous: MLE @{" "}
+            ASIC Design, AI & Automation Engineer Intern @{" "}
+            <a href="https://www.intel.com/" target="_blank" rel="noopener noreferrer" className="link">
+              Intel
+            </a>
+            . Prev @{" "}
+            <a href="https://www.webai.com/" target="_blank" rel="noopener noreferrer" className="link">
+              WebAI
+            </a>
+            ,{" "}
             <a href="https://data-to-decision.com/" target="_blank" rel="noopener noreferrer" className="link">
               Dasion
             </a>

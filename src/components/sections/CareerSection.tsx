@@ -2,15 +2,22 @@ import SectionHeader from "../SectionHeader";
 import CareerCard from "../CareerCard";
 
 const careerItems = [
-  
-   {
-     logo: "https://fmanavehsizxybddlxtr.supabase.co/storage/v1/object/sign/Portfolio/webai_logo.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZTc3ZjM5NS02NTdlLTQyMTMtOWQ4NS0zMTgyNWJlYzJlMzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8vd2ViYWlfbG9nby5wbmciLCJpYXQiOjE3Njk2MzI4MDQsImV4cCI6MTk1ODg0ODgwNH0.ofDLR9jV53-P85hc70v9bbRDiAQfUoZXtGJz4_2ojM0",
-     company: "WebAI",
-     title: "AI Engineering Intern",
-     description: "$2.5B valuation; working on SLM optimization and quantization @ Intelligence Labs, advised by Dr. P. J. Maykish",
-     href: "https://www.webai.com/",
-     startDate: "Feb 2026",
-   },
+  {
+    logo: "https://fmanavehsizxybddlxtr.supabase.co/storage/v1/object/sign/Portfolio/intel_corporation_logo.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZTc3ZjM5NS02NTdlLTQyMTMtOWQ4NS0zMTgyNWJlYzJlMzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8vaW50ZWxfY29ycG9yYXRpb25fbG9nby5qcGVnIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4Mzk5MTQ1NCwiZXhwIjoyMDk5MzUxNDU0fQ.oi76s0uSGu8QxlaDDikUPITTrXU6MmIwIim9lW9VGz8",
+    company: "Intel",
+    title: "ASIC Design, AI & Automation Engineer Intern",
+    description: "Building & using AI agents to automate PDK validation (APR/DRC/LVS) and Cadence/Synopsys tech files @ FTM",
+    href: "https://www.intel.com/",
+    startDate: "May 2026",
+  },
+  {
+    logo: "https://fmanavehsizxybddlxtr.supabase.co/storage/v1/object/sign/Portfolio/webai_logo.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZTc3ZjM5NS02NTdlLTQyMTMtOWQ4NS0zMTgyNWJlYzJlMzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8vd2ViYWlfbG9nby5wbmciLCJpYXQiOjE3Njk2MzI4MDQsImV4cCI6MTk1ODg0ODgwNH0.ofDLR9jV53-P85hc70v9bbRDiAQfUoZXtGJz4_2ojM0",
+    company: "WebAI",
+    title: "AI Engineering Intern",
+    description: "$2.5B valuation; working on SLM optimization and quantization @ Intelligence Labs, advised by Dr. P. J. Maykish",
+    href: "https://www.webai.com/",
+    startDate: "Feb 2026",
+  },
    {
     logo: "https://fmanavehsizxybddlxtr.supabase.co/storage/v1/object/sign/Portfolio/lg_nova_logo.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZTc3ZjM5NS02NTdlLTQyMTMtOWQ4NS0zMTgyNWJlYzJlMzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8vbGdfbm92YV9sb2dvLmpwZWciLCJpYXQiOjE3NzE5MjY0OTMsImV4cCI6MTg5ODA3MDQ5M30.cF7K7M5nL-DbWFt3HE6ImQIh_Y_wsxSFPvwK5Y9cwwU",
     company: "LG Electronics",

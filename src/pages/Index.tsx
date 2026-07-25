@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import InvestingSection from "@/components/sections/InvestingSection";
+import AboutSection from "@/components/sections/AboutSection";
 import CareerSection from "@/components/sections/CareerSection";
 import EducationSection from "@/components/sections/EducationSection";
 import SpeakingSection from "@/components/sections/SpeakingSection";
@@ -17,7 +17,7 @@ const Index = () => {
       <main className="min-h-screen bg-background">
         <div className="max-w-3xl mx-auto px-6 py-12">
           <Header />
-          <InvestingSection />
+          <AboutSection />
           <EducationSection />
           <CareerSection />
           <ProjectsSection />
