@@ -9,68 +9,73 @@ const AboutSection = () => {
         linkText="Resume"
         linkHref="https://drive.google.com/file/d/1An1p1pKQ5ShJUZsqd7Th4c8PUOY7Qzcu/view?usp=sharing"
       />
-      <div className="text-sm text-muted-foreground space-y-3">
+      <div className="text-sm text-muted-foreground leading-relaxed space-y-4">
         <p>
           I'm a junior at{" "}
-          <a href="https://www.berkeley.edu/" target="_blank" rel="noopener noreferrer" className="link">
+          <a href="https://www.berkeley.edu/" target="_blank" rel="noopener noreferrer" className="link font-semibold">
             UC Berkeley
           </a>{" "}
           studying{" "}
-          <a href="https://math.berkeley.edu/" target="_blank" rel="noopener noreferrer" className="link">
+          <a href="https://math.berkeley.edu/" target="_blank" rel="noopener noreferrer" className="link font-semibold">
             Applied Mathematics
           </a>{" "}
           and{" "}
-          <a href="https://data.berkeley.edu/" target="_blank" rel="noopener noreferrer" className="link">
+          <a href="https://data.berkeley.edu/" target="_blank" rel="noopener noreferrer" className="link font-semibold">
             Data Science
           </a>{" "}
           with a minor in{" "}
-          <a href="https://eecs.berkeley.edu/" target="_blank" rel="noopener noreferrer" className="link">
+          <a href="https://eecs.berkeley.edu/" target="_blank" rel="noopener noreferrer" className="link font-semibold">
             Computer Science
           </a>
-          . I work on applied ML systems: vision-language pipelines, OCR and retrieval, and evaluation-driven architectures where the goal is knowing whether the model is actually right, not just whether it runs.
-        </p>
-        <p>
-          I'm building{" "}
-          <a href="https://useecho.work" target="_blank" rel="noopener noreferrer" className="link">
-            Echo
-          </a>
-          . Hiring is breaking in a specific way: applying became free, so everyone applies everywhere, and recruiters responded by trusting applications less.{" "}
-          <span className="font-medium text-foreground">More effort in, less signal out, worse outcomes on both sides.</span>{" "}
-          The fix isn't a better cannon, it's proving fit before the application is ever sent. Echo polls company job boards directly, scores how well you actually match each new posting, and shows the evidence behind every score. I validated it against my own application history first, where it cleanly separated the roles that called me back from the ones that rejected me, and it now surfaces fresh postings hours after they go live. What I'm working toward is the thing that doesn't exist yet:{" "}
-          <span className="font-medium text-foreground">an application channel recruiters actually trust</span>
-          , because fit was verified before anyone hit send.
-        </p>
-        <p>
-          I'm also an{" "}
-          <a href="https://www.intel.com/" target="_blank" rel="noopener noreferrer" className="link">
-            Intel
-          </a>{" "}
-          ASIC Design, AI & Automation Engineer Intern, where I build agents that automate PDK validation for external foundry customers. Before Echo I built{" "}
-          <a href="https://github.com/avaneeshjoshi/Balatro-RL" target="_blank" rel="noopener noreferrer" className="link">
-            Balatro-RL
-          </a>
-          , a{" "}
-          <a href="https://openai.com/research/openai-baselines-ppo" target="_blank" rel="noopener noreferrer" className="link">
-            PPO
-          </a>{" "}
-          agent that learns to play the roguelike{" "}
-          <a href="https://store.steampowered.com/app/2379780/Balatro/" target="_blank" rel="noopener noreferrer" className="link">
-            Balatro
-          </a>
+          . I work on applied ML systems: vision-language pipelines, OCR and retrieval, and{" "}
+          <strong className="font-medium text-foreground">
+            evaluation-driven architectures where the goal is knowing whether the model is actually right, not just whether it runs
+          </strong>
           .
         </p>
         <p>
-          Beyond ML, I'm drawn to financial markets, mathematics, and video games. I love work that keeps me up at night and makes my brain feel alive. I also paint (acrylics and digital), cook (I take my time but always make sure I serve perfection), play badminton (formerly competitive), and go on nightly drives where I get out and record things around me for filmmaking.
+          I'm building{" "}
+          <a href="https://useecho.work" target="_blank" rel="noopener noreferrer" className="link font-semibold">
+            Echo
+          </a>
+          , an{" "}
+          <strong className="font-medium text-foreground">
+            autonomous incident-response agent
+          </strong>
+          . When production breaks, Echo wakes up the moment an alert fires, gathers evidence across logs, metrics, traces, and recent deploys, reasons over it, and only makes claims it can ground in what actually happened.{" "}
+          <strong className="font-medium text-foreground">
+            The hard problem in this space isn't speed, it's trust
+          </strong>
+          : most tools confidently guess at root causes and send on-call engineers down the wrong path at 3am. So I'm building the one you can actually believe, on a foundation designed to{" "}
+          <strong className="font-medium text-foreground">
+            make autonomy measurable rather than vibe-based
+          </strong>
+          : a replayable incident engine, a breakable microservice sandbox, fault injection with recorded ground truth, and a scoring harness that grades every diagnosis against what really broke. What I'm building toward next is{" "}
+          <strong className="font-medium text-foreground">
+            multiplayer incident response
+          </strong>
+          , where engineers and agents share the same live room, compare hypotheses, and move from diagnosis to safe fixes together.
         </p>
         <p>
-          I'm a creative personality at heart who found a home in machine learning. San Francisco has become the center of my work and community, and I'm excited to keep building here.
-        </p>
-        <p>
-          Email me at{" "}
-          <a href="mailto:avaneesh@useecho.work" className="link">
-            avaneesh [at] useecho.work
+          I'm also an{" "}
+          <a href="https://www.intel.com/" target="_blank" rel="noopener noreferrer" className="link font-semibold">
+            Intel
           </a>{" "}
-          if you want to reach out about Echo, ML engineering, research, or anything interesting.
+          ASIC Design, AI & Automation Engineer Intern, where I build agents that automate PDK validation for external foundry customers. Before Echo I built{" "}
+          <a href="https://github.com/avaneeshjoshi/Balatro-RL" target="_blank" rel="noopener noreferrer" className="link font-semibold">
+            Balatro-RL
+          </a>
+          , a live-game ML agent that reads visible{" "}
+          <a href="https://store.steampowered.com/app/2379780/Balatro/" target="_blank" rel="noopener noreferrer" className="link font-semibold">
+            Balatro
+          </a>
+          {" "}state through a Lua/Python bridge and executes moves in real time. I built its Gymnasium environment, BalatroBench data pipeline, behavioral-cloning policy, legality-masked planner, and deterministic poker-scoring engine.
+        </p>
+        <p>
+          Outside of building, I'm drawn to financial markets, mathematics, and video games, the kind of problems that are still interesting at 2am. I also paint (acrylics and digital), cook (slowly, but I plate it like it matters), used to play badminton competitively, and go on late-night drives where I stop to film whatever catches my eye.
+        </p>
+        <p>
+          I came to machine learning from an art background, and I still approach building the same way: obsessively, and caring how the thing feels, not just whether it works. San Francisco is where I've found the work and the people I want to be around, and I'm not planning to leave.
         </p>
       </div>
     </section>

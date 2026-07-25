@@ -6,7 +6,7 @@ const Header = () => {
         <div className="dp-container">
           <div className="dp-circle" /> {/* This creates the 3D depth and shadows */}
           <img
-            src="https://fmanavehsizxybddlxtr.supabase.co/storage/v1/object/sign/Portfolio/avaneeshjoshi%20headshot.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZTc3ZjM5NS02NTdlLTQyMTMtOWQ4NS0zMTgyNWJlYzJlMzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJQb3J0Zm9saW8vYXZhbmVlc2hqb3NoaSBoZWFkc2hvdC5qcGVnIiwiaWF0IjoxNzY4NjcxOTIxLCJleHAiOjE5MjYzNTE5MjF9.R1UP2HmCY-rK7Ql_p96MuSJ1fQFm0ymzT4POHXB6vlo"
+            src="https://media.licdn.com/dms/image/v2/D5603AQEun6I8KI8uyA/profile-displayphoto-crop_800_800/B56ZwMCSUzIQAI-/0/1769728452412?e=1786579200&v=beta&t=fgl3oqBVgONBxyYVVpwPXorBKaLiVpnI4Eejxqla03I"
             alt="Avaneesh Joshi"
             className="image" // Image fits exactly inside the 3px border
           />
@@ -21,10 +21,10 @@ const Header = () => {
         <div className="bio">
           <p>
             Junior at{" "}
-            <a href="https://www.linkedin.com/in/avaneesh-joshi/" target="_blank" rel="noopener noreferrer" className="link">
+            <a href="https://www.berkeley.edu/" target="_blank" rel="noopener noreferrer" className="link">
               UC Berkeley
             </a>{" "}
-            specializing in full-stack applications and AI/ML systems.
+            working on applied ML systems, incident response, and evaluation-driven automation.
           </p>
           <p>
             ASIC Design, AI & Automation Engineer Intern @{" "}
@@ -55,8 +55,8 @@ const Header = () => {
               X
             </a>
             . Reach me at{" "}
-            <a href="mailto:avaneeshjoshi@berkeley.edu" className="link">
-            avaneeshjoshi [at] berkeley.edu
+            <a href="mailto:avaneesh@useecho.work" className="link">
+            avaneesh [at] useecho.work
           </a>.
           </p>
         </div>
@@ -72,7 +72,7 @@ const Header = () => {
           <a href="https://github.com/avaneeshjoshi" target="_blank" rel="noopener noreferrer" className="btn" aria-label="GitHub">
             <i className="fa-brands fa-github"></i>
           </a>
-          <a href="mailto:avaneeshjoshi@berkeley.edu" className="btn" aria-label="Email">
+          <a href="mailto:avaneesh@useecho.work" className="btn" aria-label="Email">
             <i className="fa fa-envelope"></i>
           </a>
         </div>
