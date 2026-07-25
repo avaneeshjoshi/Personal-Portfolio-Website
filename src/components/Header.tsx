@@ -55,8 +55,8 @@ const Header = () => {
               X
             </a>
             . Reach me at{" "}
-            <a href="mailto:avaneesh@useecho.work" className="link">
-            avaneesh [at] useecho.work
+            <a href="mailto:avaneeshjoshi@berkeley.edu" className="link">
+            avaneeshjoshi [at] berkeley.edu
           </a>.
           </p>
         </div>
@@ -72,7 +72,7 @@ const Header = () => {
           <a href="https://github.com/avaneeshjoshi" target="_blank" rel="noopener noreferrer" className="btn" aria-label="GitHub">
             <i className="fa-brands fa-github"></i>
           </a>
-          <a href="mailto:avaneesh@useecho.work" className="btn" aria-label="Email">
+          <a href="mailto:avaneeshjoshi@berkeley.edu" className="btn" aria-label="Email">
             <i className="fa fa-envelope"></i>
           </a>
         </div>

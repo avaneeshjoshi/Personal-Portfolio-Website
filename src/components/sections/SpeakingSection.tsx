@@ -38,6 +38,19 @@ const SpeakingSection = () => {
           </div>
         </div>
         <div>
+          <p className="card-title mb-2">ML / AI</p>
+          <div className="flex flex-wrap gap-2">
+            <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" alt="PyTorch" />
+            <img src="https://img.shields.io/badge/Hugging_Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="Hugging Face" />
+            <img src="https://img.shields.io/badge/Transformers-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="Transformers" />
+            <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white" alt="scikit-learn" />
+            <img src="https://img.shields.io/badge/Embeddings_%2F_Vector_Search-5A67D8?style=flat-square" alt="Embeddings / Vector Search" />
+            <img src="https://img.shields.io/badge/Prompt_Engineering-8A63D2?style=flat-square" alt="Prompt Engineering" />
+            <img src="https://img.shields.io/badge/LLM_Evaluation-8A63D2?style=flat-square" alt="LLM Evaluation" />
+            <img src="https://img.shields.io/badge/Gymnasium-0081A5?style=flat-square" alt="Gymnasium" />
+          </div>
+        </div>
+        <div>
           <p className="card-title mb-2">Developer Tools</p>
           <div className="flex flex-wrap gap-2">
             <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" alt="Git" />
@@ -51,6 +64,11 @@ const SpeakingSection = () => {
             <img src="https://img.shields.io/badge/RESTful_API-FF6F00?style=flat-square&logo=rest&logoColor=white" alt="RESTful APIs" />
             <img src="https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black" alt="Linux" />
             <img src="https://img.shields.io/badge/OAuth_2.0-EB5424?style=flat-square&logo=oauth&logoColor=white" alt="OAuth 2.0" />
+            <img src="https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white" alt="pytest" />
+            <img src="https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white" alt="Cloudflare" />
+            <img src="https://img.shields.io/badge/OpenTelemetry-425CC7?style=flat-square&logo=opentelemetry&logoColor=white" alt="OpenTelemetry" />
+            <img src="https://img.shields.io/badge/Prometheus-E6522C?style=flat-square&logo=prometheus&logoColor=white" alt="Prometheus" />
+            <img src="https://img.shields.io/badge/Grafana-F46800?style=flat-square&logo=grafana&logoColor=white" alt="Grafana" />
           </div>
         </div>
         <div>

@@ -8,6 +8,13 @@ import SpeakingSection from "@/components/sections/SpeakingSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import GithubSection from "@/components/sections/GithubSection";
 
+const scrollToTop = () => {
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
+};
+
 const Index = () => {
   useEffect(() => {
     document.title = "Avaneesh Joshi";
@@ -30,10 +37,17 @@ const Index = () => {
         <GithubSection />
         <SpeakingSection />
         {/* <NewsSection /> */}
-        <footer className="text-center text-sm text-muted-foreground pt-8 border-t border-border">
-          You can view the older version of this website{" "}
-          <a href="https://avxneeshjoshi.vercel.app">here</a>.
-        </footer>
+        <div className="flex justify-center pt-4">
+          <button
+            type="button"
+            onClick={scrollToTop}
+            className="btn w-auto px-3 text-sm font-medium"
+            aria-label="Back to top"
+          >
+            <i className="fa-solid fa-arrow-up"></i>
+            Back to top
+          </button>
+        </div>
       </div>
     </main>
   );
