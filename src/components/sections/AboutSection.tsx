@@ -35,33 +35,33 @@ const AboutSection = () => {
         </p>
         <p>
           I'm building{" "}
-          <a href="https://useecho.work" target="_blank" rel="noopener noreferrer" className="link font-semibold">
-            Echo
+          <a href="https://caliper-website.vercel.app/" target="_blank" rel="noopener noreferrer" className="link font-semibold">
+            Caliper
           </a>
-          , an{" "}
+          , a{" "}
           <strong className="font-medium text-foreground">
-            autonomous incident-response agent
+            measurement layer for AI coding agents
           </strong>
-          . When production breaks, Echo wakes up the moment an alert fires, gathers evidence across logs, metrics, traces, and recent deploys, reasons over it, and only makes claims it can ground in what actually happened.{" "}
+          . Companies are spending heavily on Claude Code, Cursor, and Codex, and nobody can tell them whether that money produced anything that mattered. The tools that exist measure spend without measuring outcome, and the vendors cannot credibly grade themselves. Caliper reads the logs those agents already write, never touching prompts or code, and traces what happened afterward: whether the lines survived, whether someone quietly rewrote them within two weeks, whether the change got reverted, and eventually whether the ticket it closed ever shipped.{" "}
           <strong className="font-medium text-foreground">
-            The hard problem in this space isn't speed, it's trust
+            That last link is what turns cost into impact
           </strong>
-          : most tools confidently guess at root causes and send on-call engineers down the wrong path at 3am. So I'm building the one you can actually believe, on a foundation designed to{" "}
+          , because durable code that nobody needed is still waste. The other half is{" "}
           <strong className="font-medium text-foreground">
-            make autonomy measurable rather than vibe-based
+            controlled replay
           </strong>
-          : a replayable incident engine, a breakable microservice sandbox, fault injection with recorded ground truth, and a scoring harness that grades every diagnosis against what really broke. What I'm building toward next is{" "}
+          , running the same real tasks across model tiers under identical conditions to find where quality actually drops rather than where a vendor says it doesn't, which turns into a routing policy: which class of work runs on which model, applied through the tools' own config rather than a proxy in the request path. The first artifact came from 30 bug fixes mined from Apache commons-lang, replayed blind across three Claude tiers. The mid tier matched the frontier model at 72% lower billed spend, and when I reran it with repeats the gap I thought I'd found disappeared entirely. That is the thesis in one result:{" "}
           <strong className="font-medium text-foreground">
-            multiplayer incident response
+            single-run comparisons manufacture differences that aren't there
           </strong>
-          , where engineers and agents share the same live room, compare hypotheses, and move from diagnosis to safe fixes together.
+          , and almost everyone publishing these numbers runs them once.
         </p>
         <p>
           I'm also an{" "}
           <a href="https://www.intel.com/" target="_blank" rel="noopener noreferrer" className="link font-semibold">
             Intel
           </a>{" "}
-          ASIC Design, AI & Automation Engineer Intern, where I build agents that automate PDK validation for external foundry customers. Before Echo I built{" "}
+          ASIC Design, AI & Automation Engineer Intern, where I build agents that automate PDK validation for external foundry customers. Before Caliper I built{" "}
           <a href="https://github.com/avaneeshjoshi/Balatro-RL" target="_blank" rel="noopener noreferrer" className="link font-semibold">
             Balatro-RL
           </a>

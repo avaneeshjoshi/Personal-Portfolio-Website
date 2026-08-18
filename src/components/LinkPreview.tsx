@@ -342,7 +342,7 @@ const LinkPreview = () => {
               <div className="link-preview-email">
                 <span className="link-preview-email-title">New Message</span>
                 <span>To: {preview.displayUrl}</span>
-                <span>Subject: Echo, ML engineering, or research</span>
+                <span>Subject: Caliper, ML engineering, or research</span>
               </div>
             ) : (
               <>
