@@ -15,6 +15,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        serif: ['Newsreader', 'Georgia', '"Times New Roman"', 'serif'],
+        mono: ['"IBM Plex Mono"', 'ui-monospace', '"SF Mono"', 'Menlo', 'monospace'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,6 +53,21 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         link: "hsl(var(--link-color))",
+        "link-hover": "hsl(var(--link-hover))",
+        ink: {
+          DEFAULT: "hsl(var(--text-primary))",
+          secondary: "hsl(var(--text-secondary))",
+          muted: "hsl(var(--text-muted))",
+        },
+        v2: {
+          bg: "var(--v2-bg)",
+          fg: "var(--v2-fg)",
+          muted: "var(--v2-fg-muted)",
+          accent: "var(--v2-accent)",
+          hairline: "var(--v2-hairline)",
+          card: "var(--v2-card)",
+          placeholder: "var(--v2-placeholder)",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

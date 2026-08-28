@@ -15,7 +15,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 13%;
 
-    --primary: 20 90% 48%;
+    --primary: 210 100% 50%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 96%;
@@ -32,16 +32,65 @@
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 20 90% 48%;
+    --ring: 210 100% 50%;
 
     --radius: 0.5rem;
 
     /* Custom design tokens */
-    --link-color: 20 90% 48%;
+    --link-color: 210 100% 50%;
     --text-primary: 0 0% 13%;
     --text-secondary: 0 0% 35%;
     --text-muted: 0 0% 55%;
     --section-spacing: 3rem;
+    color-scheme: light;
+
+    /* Component tokens (light values are identical to the original hardcoded ones) */
+    --link-text: 0 0% 21%;
+    --link-underline: 0 0% 87%;
+    --link-hover: 210 100% 50%;
+    --btn-bg: 0 0% 100%;
+    --btn-text: 0 0% 27%;
+    --btn-text-hover: 0 0% 10%;
+    --btn-sheen: radial-gradient(circle closest-corner at 50% 66%, rgba(26, 26, 26, .08), hsla(0, 0%, 100%, .01));
+    --btn-sheen-hover: radial-gradient(circle farthest-side at 50% 72%, rgba(26, 26, 26, .12), hsla(0, 0%, 100%, .01));
+    --btn-shadow:
+      inset 0 0 0 1px hsla(0, 0%, 100%, .4),
+      0 0 0 1px rgba(26, 26, 26, .04),
+      0 1px 2px 1px hsla(0, 0%, 94%, .2),
+      0 2px 4px 0 hsla(0, 0%, 81%, .2),
+      0 2px 1px 0 rgba(26, 26, 26, .06),
+      0 2px 4px -2px rgba(26, 26, 26, .2);
+    --btn-shadow-hover:
+      inset 0 0 0 0 hsla(0, 0%, 100%, .01),
+      0 0 0 1px rgba(26, 26, 26, .06),
+      0 1px 2px 1px hsla(0, 0%, 94%, .4),
+      0 2px 4px 0 hsla(0, 0%, 81%, .2),
+      0 3px 1px 0 rgba(26, 26, 26, .08),
+      0 2px 4px -2px rgba(26, 26, 26, .32);
+    --btn-shadow-active:
+      inset 0 0 0 20px hsla(0, 0%, 100%, .08),
+      0 0 0 1px rgba(26, 26, 26, .12),
+      0 2px 2px 1px rgba(26, 26, 26, .04),
+      0 2px 4px 0 hsla(0, 0%, 81%, .2),
+      0 3px 1px 0 rgba(26, 26, 26, .01),
+      0 2px 4px -2px rgba(26, 26, 26, .02);
+    --card-shadow:
+      0 0 0 1px rgba(26, 26, 26, .04),
+      0 1px 2px 1px hsla(0, 0%, 94%, .2),
+      0 2px 4px 0 hsla(0, 0%, 81%, .2),
+      0 2px 1px 0 rgba(26, 26, 26, .06),
+      0 2px 4px -2px rgba(26, 26, 26, .2);
+    --card-shadow-hover:
+      0 0 0 1px rgba(26, 26, 26, .08),
+      0 2px 4px 1px hsla(0, 0%, 94%, .5),
+      0 4px 8px 0 hsla(0, 0%, 81%, .3),
+      0 4px 2px 0 rgba(26, 26, 26, .12),
+      0 4px 8px -2px rgba(26, 26, 26, .4),
+      0 6px 12px -4px rgba(26, 26, 26, .15);
+    --dp-highlight: rgba(255, 255, 255, 0.8);
+    --dp-ring: rgba(255, 255, 255, 0.1);
+    --calendar-empty-stroke: rgba(0, 0, 0, 0.1);
+    --calendar-stroke: #595959;
   }
 
   .dark {
@@ -54,7 +103,7 @@
     --popover: 0 0% 10%;
     --popover-foreground: 0 0% 95%;
 
-    --primary: 20 90% 55%;
+    --primary: 210 100% 66%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 15%;
@@ -71,12 +120,48 @@
 
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 20 90% 55%;
+    --ring: 210 100% 66%;
 
-    --link-color: 20 90% 55%;
+    --link-color: 210 100% 66%;
     --text-primary: 0 0% 95%;
     --text-secondary: 0 0% 75%;
     --text-muted: 0 0% 55%;
+    color-scheme: dark;
+
+    --link-text: 0 0% 85%;
+    --link-underline: 0 0% 27%;
+    --link-hover: 210 100% 66%;
+    --btn-bg: 0 0% 13%;
+    --btn-text: 0 0% 78%;
+    --btn-text-hover: 0 0% 100%;
+    --btn-sheen: radial-gradient(circle closest-corner at 50% 66%, rgba(255, 255, 255, .05), rgba(0, 0, 0, .01));
+    --btn-sheen-hover: radial-gradient(circle farthest-side at 50% 72%, rgba(255, 255, 255, .09), rgba(0, 0, 0, .01));
+    --btn-shadow:
+      inset 0 1px 0 0 rgba(255, 255, 255, .08),
+      0 0 0 1px rgba(0, 0, 0, .6),
+      0 1px 2px 1px rgba(0, 0, 0, .3),
+      0 2px 4px -2px rgba(0, 0, 0, .5);
+    --btn-shadow-hover:
+      inset 0 1px 0 0 rgba(255, 255, 255, .12),
+      0 0 0 1px rgba(0, 0, 0, .7),
+      0 2px 4px 1px rgba(0, 0, 0, .4),
+      0 3px 6px -2px rgba(0, 0, 0, .6);
+    --btn-shadow-active:
+      inset 0 0 0 20px rgba(0, 0, 0, .18),
+      0 0 0 1px rgba(0, 0, 0, .7),
+      0 1px 1px 0 rgba(0, 0, 0, .3);
+    --card-shadow:
+      0 0 0 1px rgba(255, 255, 255, .07),
+      0 1px 2px 1px rgba(0, 0, 0, .3),
+      0 2px 4px -2px rgba(0, 0, 0, .5);
+    --card-shadow-hover:
+      0 0 0 1px rgba(255, 255, 255, .12),
+      0 4px 8px 0 rgba(0, 0, 0, .45),
+      0 6px 12px -4px rgba(0, 0, 0, .6);
+    --dp-highlight: rgba(255, 255, 255, 0.28);
+    --dp-ring: rgba(255, 255, 255, 0.06);
+    --calendar-empty-stroke: rgba(255, 255, 255, 0.08);
+    --calendar-stroke: #3a3a3a;
   }
 }
 
@@ -153,13 +238,13 @@
     border-radius: 50%;
     z-index: 1;
     background: 
-      radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8) 0%, transparent 70%),
+      radial-gradient(circle at 30% 30%, var(--dp-highlight) 0%, transparent 70%),
       linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
     box-shadow: 
       inset 0 1px 0 rgba(255, 255, 255, 0.6),
       inset 0 -1px 0 rgba(0, 0, 0, 0.2),
       rgba(26, 26, 26, 0.36) 0px 6px 4px -1px,
-      0px 0px 0px 3px rgba(255, 255, 255, 0.1);
+      0px 0px 0px 3px var(--dp-ring);
   }
 
   .dp-container .image {
@@ -197,20 +282,14 @@
     text-align: center;
     gap: 4px;
     border-radius: 8px;
-    background-color: #fff;
+    background-color: hsl(var(--btn-bg));
     /* Simulated surface lighting */
-    background-image: radial-gradient(circle closest-corner at 50% 66%, rgba(26, 26, 26, .08), hsla(0, 0%, 100%, .01));
+    background-image: var(--btn-sheen);
     /* The 6-layer shadow stack for depth */
-    box-shadow: 
-      inset 0 0 0 1px hsla(0, 0%, 100%, .4), 
-      0 0 0 1px rgba(26, 26, 26, .04), 
-      0 1px 2px 1px hsla(0, 0%, 94%, .2), 
-      0 2px 4px 0 hsla(0, 0%, 81%, .2), 
-      0 2px 1px 0 rgba(26, 26, 26, .06), 
-      0 2px 4px -2px rgba(26, 26, 26, .2);
+    box-shadow: var(--btn-shadow);
     transform: translate(0);
     transition: background-position .4s ease, color .4s ease, transform .12s ease-out, box-shadow .12s ease-in-out;
-    color: #444;
+    color: hsl(var(--btn-text));
     font-family: SF Pro Text, system-ui;
     font-weight: 500;
     text-decoration: none; /* Remove underline */
@@ -226,27 +305,15 @@
 
   /* "Lift" effect on hover */
   .btn:hover {
-    background-image: radial-gradient(circle farthest-side at 50% 72%, rgba(26, 26, 26, .12), hsla(0, 0%, 100%, .01));
-    box-shadow: 
-      inset 0 0 0 0 hsla(0, 0%, 100%, .01), 
-      0 0 0 1px rgba(26, 26, 26, .06), 
-      0 1px 2px 1px hsla(0, 0%, 94%, .4), 
-      0 2px 4px 0 hsla(0, 0%, 81%, .2), 
-      0 3px 1px 0 rgba(26, 26, 26, .08), 
-      0 2px 4px -2px rgba(26, 26, 26, .32);
+    background-image: var(--btn-sheen-hover);
+    box-shadow: var(--btn-shadow-hover);
     transform: translateY(-.5px);
-    color: #1a1a1a;
+    color: hsl(var(--btn-text-hover));
   }
 
   /* "Pressed" effect on click */
   .btn:active {
-    box-shadow: 
-      inset 0 0 0 20px hsla(0, 0%, 100%, .08), 
-      0 0 0 1px rgba(26, 26, 26, .12), 
-      0 2px 2px 1px rgba(26, 26, 26, .04), 
-      0 2px 4px 0 hsla(0, 0%, 81%, .2), 
-      0 3px 1px 0 rgba(26, 26, 26, .01), 
-      0 2px 4px -2px rgba(26, 26, 26, .02);
+    box-shadow: var(--btn-shadow-active);
     transform: translateY(.5px);
   }
 
@@ -264,7 +331,7 @@
     display: inline-flex;
     padding: 4px 0;
     margin: -2px 0;
-    color: #363636;
+    color: hsl(var(--link-text));
     font-weight: 500;
     text-decoration: none;
     /* TEXT COLOR TRANSITION */
@@ -279,7 +346,7 @@
     right: 0;
     bottom: 4px;
     height: 1px;
-    background-color: #ddd;
+    background-color: hsl(var(--link-underline));
     /* THE TRANSITION */
     transition: background-color .2s ease-out, bottom .2s ease-out, transform .4s cubic-bezier(.785, .135, .15, .86), height .1s ease-out;
   }
@@ -292,7 +359,7 @@
     right: 0;
     top: 10px;
     bottom: 6px;
-    background-color: #0080ff00; /* Transparent blue */
+    background-color: hsl(var(--link-hover) / 0); /* Transparent blue */
     border-radius: .5px;
     /* THE TRANSITION */
     transition: border-radius .1s ease, background-color 50ms cubic-bezier(.215, .61, .355, 1), left 50ms ease, right 50ms ease, top 50ms ease, bottom 50ms ease;
@@ -300,11 +367,11 @@
 
   /* HOVER EFFECTS */
   .link:hover {
-    color: #0080ff;
+    color: hsl(var(--link-hover));
   }
 
   .link:hover:after {
-    background-color: #0080ff29;
+    background-color: hsl(var(--link-hover) / .16);
     bottom: 4px;
     height: 1.5px;
   }
@@ -315,11 +382,11 @@
     top: 6px;
     bottom: 5px;
     border-radius: 2px;
-    background-color: #0080ff05;
+    background-color: hsl(var(--link-hover) / .02);
   }
 
   .link.ext {
-    @apply text-[#0070f3] hover:underline transition-colors;
+    @apply text-link-hover hover:underline transition-colors;
   }
 
   /* Section title with Font Awesome icon */
@@ -423,11 +490,11 @@
   }
 
   .post h4 {
-    @apply text-base font-semibold text-[#111] mb-1;
+    @apply text-base font-semibold text-ink mb-1;
   }
 
   .post p {
-    @apply text-sm text-[#666] leading-relaxed;
+    @apply text-sm text-ink-secondary leading-relaxed;
   }
 
   /* Writing section styles */
@@ -450,15 +517,15 @@
 
   /* Markdown content styles */
   .markdown {
-    @apply text-sm text-[#666] leading-relaxed;
+    @apply text-sm text-ink-secondary leading-relaxed;
   }
 
   .markdown a {
-    @apply text-[#0070f3] hover:underline;
+    @apply text-link-hover hover:underline;
   }
 
   .markdown b {
-    @apply font-semibold text-[#111];
+    @apply font-semibold text-ink;
   }
 
   /* Post markdown styling for GitHub section */
@@ -471,7 +538,7 @@
 
   /* Bio text styles */
   .bio {
-    @apply text-[#666] text-[14px] leading-relaxed;
+    @apply text-ink-secondary text-[14px] leading-relaxed;
   }
 
   .bio p {
@@ -501,34 +568,27 @@
   .card-image {
     @apply w-16 h-16 rounded-lg object-cover flex-shrink-0;
     /* Drop shadow similar to buttons */
-    box-shadow: 
-      0 0 0 1px rgba(26, 26, 26, .04), 
-      0 1px 2px 1px hsla(0, 0%, 94%, .2), 
-      0 2px 4px 0 hsla(0, 0%, 81%, .2), 
-      0 2px 1px 0 rgba(26, 26, 26, .06), 
-      0 2px 4px -2px rgba(26, 26, 26, .2);
+    box-shadow: var(--card-shadow);
     transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;
   }
   
   /* Hover effect on card images - enhanced shadow for clearer animation */
   .content-card:hover .card-image {
-    box-shadow: 
-      0 0 0 1px rgba(26, 26, 26, .08), 
-      0 2px 4px 1px hsla(0, 0%, 94%, .5), 
-      0 4px 8px 0 hsla(0, 0%, 81%, .3), 
-      0 4px 2px 0 rgba(26, 26, 26, .12), 
-      0 4px 8px -2px rgba(26, 26, 26, .4),
-      0 6px 12px -4px rgba(26, 26, 26, .15);
+    box-shadow: var(--card-shadow-hover);
     transform: scale(1.02);
   }
 
   .card-title {
-    @apply font-semibold text-[#111] transition-colors text-sm;
+    @apply font-semibold text-ink transition-colors text-sm;
     position: relative;
   }
 
   .card-description {
-    @apply text-xs text-[#666] leading-relaxed mt-1;
+    @apply text-xs text-ink-secondary leading-relaxed mt-1;
+  }
+
+  .card-meta {
+    @apply flex flex-wrap items-center gap-x-3 gap-y-0.5 text-[11px] text-ink-muted mt-1.5;
   }
 
   /* Link hover animation for card titles */
@@ -539,14 +599,14 @@
     right: -4px;
     top: 2px;
     bottom: 2px;
-    background-color: #0080ff00; /* Transparent blue */
+    background-color: hsl(var(--link-hover) / 0); /* Transparent blue */
     border-radius: .5px;
     transition: border-radius .1s ease, background-color 50ms cubic-bezier(.215, .61, .355, 1), left 50ms ease, right 50ms ease, top 50ms ease, bottom 50ms ease;
     z-index: -1;
   }
 
   .content-card:hover .card-title {
-    color: #0080ff;
+    color: hsl(var(--link-hover));
   }
 
   .content-card:hover .card-title::before {
@@ -555,7 +615,7 @@
     top: -2px;
     bottom: -2px;
     border-radius: 2px;
-    background-color: #0080ff05;
+    background-color: hsl(var(--link-hover) / .02);
   }
 
   .social-icon {
@@ -572,21 +632,32 @@
   }
 
   /* Add borders to empty squares (Level 0) */
-  .github-calendar-wrapper svg rect[fill="#ebedf0"] {
-    stroke: rgba(0, 0, 0, 0.1); /* Subtle dark border to define the light gray */
+  .github-calendar-wrapper svg rect[fill="#ebedf0"],
+  .github-calendar-wrapper svg rect[fill="rgb(235, 237, 240)"],
+  .github-calendar-wrapper svg rect[fill="#1f1f1f"],
+  .github-calendar-wrapper svg rect[fill="rgb(31, 31, 31)"] {
+    stroke: var(--calendar-empty-stroke); /* Subtle border to define the empty squares */
     stroke-width: 1px;
   }
 
   /* Add borders to colored activity squares */
-  .github-calendar-wrapper svg rect[fill="#c6e48b"],
-  .github-calendar-wrapper svg rect[fill="#7bc96f"],
-  .github-calendar-wrapper svg rect[fill="#239a3b"],
-  .github-calendar-wrapper svg rect[fill="#196127"],
-  .github-calendar-wrapper svg rect[fill="rgb(198, 228, 139)"],
-  .github-calendar-wrapper svg rect[fill="rgb(123, 201, 111)"],
-  .github-calendar-wrapper svg rect[fill="rgb(35, 154, 59)"],
-  .github-calendar-wrapper svg rect[fill="rgb(25, 97, 39)"] {
-    stroke: #595959;
+  .github-calendar-wrapper svg rect[fill="#b6d7ff"],
+  .github-calendar-wrapper svg rect[fill="rgb(182, 215, 255)"],
+  .github-calendar-wrapper svg rect[fill="#6fb0ff"],
+  .github-calendar-wrapper svg rect[fill="rgb(111, 176, 255)"],
+  .github-calendar-wrapper svg rect[fill="#2b84e6"],
+  .github-calendar-wrapper svg rect[fill="rgb(43, 132, 230)"],
+  .github-calendar-wrapper svg rect[fill="#0b4f9c"],
+  .github-calendar-wrapper svg rect[fill="rgb(11, 79, 156)"],
+  .github-calendar-wrapper svg rect[fill="#0b2f5c"],
+  .github-calendar-wrapper svg rect[fill="rgb(11, 47, 92)"],
+  .github-calendar-wrapper svg rect[fill="#0f4f95"],
+  .github-calendar-wrapper svg rect[fill="rgb(15, 79, 149)"],
+  .github-calendar-wrapper svg rect[fill="#2a7fd6"],
+  .github-calendar-wrapper svg rect[fill="rgb(42, 127, 214)"],
+  .github-calendar-wrapper svg rect[fill="#62b0ff"],
+  .github-calendar-wrapper svg rect[fill="rgb(98, 176, 255)"] {
+    stroke: var(--calendar-stroke);
     stroke-width: 0.5px;
     rx: 2px; /* Subtle rounding to match your UI */
   }
@@ -596,7 +667,7 @@
   .github-calendar-wrapper [data-level="2"],
   .github-calendar-wrapper [data-level="3"],
   .github-calendar-wrapper [data-level="4"] {
-    border: 0.5px solid #595959;
+    border: 0.5px solid var(--calendar-stroke);
     border-radius: 2px;
   }
 
