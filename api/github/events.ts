@@ -1,4 +1,4 @@
-import { errorResponse, fetchEvents, json } from "../_lib/github";
+import { errorResponse, fetchEvents, json } from "../_lib/github.js";
 
 export async function GET(): Promise<Response> {
   try {

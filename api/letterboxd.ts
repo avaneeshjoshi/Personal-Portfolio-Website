@@ -1,4 +1,4 @@
-import { errorResponse, HttpError, json } from "./_lib/http";
+import { errorResponse, HttpError, json } from "./_lib/http.js";
 import type { LetterboxdFilm, LetterboxdResponse } from "../src/lib/letterboxd/types";
 
 const USERNAME = "avxneeshjoshi";

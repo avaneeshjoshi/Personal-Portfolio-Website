@@ -14,8 +14,8 @@ const USER_AGENT = "avaneeshjoshi-portfolio";
 const REPO_RE = /^[\w.-]+\/[\w.-]+$/;
 const MAX_REPOS = 20;
 
-import { HttpError, json } from "./http";
-export { HttpError, json, errorResponse } from "./http";
+import { HttpError, json } from "./http.js";
+export { HttpError, json, errorResponse } from "./http.js";
 
 export function getToken(): string {
   const token = process.env.GITHUB_TOKEN;
