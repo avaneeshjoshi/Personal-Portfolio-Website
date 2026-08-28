@@ -1,98 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { GitHubCalendar } from "react-github-calendar";
 import SectionHeader from "../SectionHeader";
-// 1. Import the Calendar component
-import { GitHubCalendar } from 'react-github-calendar';
+import { useGithubEvents } from "@/hooks/use-github";
+import { useTheme } from "@/theme/ThemeProvider";
+import { GITHUB_USERNAME } from "@/data/projects";
 
-interface GithubEvent {
-  id: string;
-  type: string;
-  public: boolean;
-  created_at: string;
-  repo: { name: string };
-  payload: { 
-    size?: number;
-    ref_type?: string;
-    ref?: string;
-  };
+/** Light: classic GitHub greens. Dark: GitHub's dark-mode greens. */
+export const CALENDAR_THEME = {
+  light: ["#ebedf0", "#b6d7ff", "#6fb0ff", "#2b84e6", "#0b4f9c"],
+  dark: ["#1f1f1f", "#0b2f5c", "#0f4f95", "#2a7fd6", "#62b0ff"],
+};
+
+interface GithubSectionProps {
+  /** Render the recent activity feed under the calendar (default true). */
+  showFeed?: boolean;
+  /** Smaller squares so a full year fits a ~720px column without scrolling. */
+  compact?: boolean;
 }
 
-const GithubSection: React.FC = () => {
-  const [events, setEvents] = useState<GithubEvent[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const username = "avaneeshjoshi";
-
-  // 2. Define the GitHub dark theme colors
-  // Custom color ramp from light gray to vibrant green
-  const githubTheme = {
-    dark: [
-      '#ebedf0', // Level 0: Your light gray (Base/Empty)
-      '#c6e48b', // Level 1
-      '#7bc96f', // Level 2
-      '#239a3b', // Level 3
-      '#196127'  // Level 4
-    ],
-    light: ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'],
-  };
-
-  useEffect(() => {
-    const fetchGithubData = async () => {
-      try {
-        const token = import.meta.env.VITE_GITHUB_TOKEN;
-        const headers: HeadersInit = {};
-        
-        if (token) {
-          headers.Authorization = `token ${token}`;
-        }
-
-        const response = await fetch(
-          `https://api.github.com/users/${username}/events?per_page=50`, 
-          { headers }
-        );
-        
-        if (!response.ok) throw new Error(`Status: ${response.status}`);
-
-        const data: GithubEvent[] = await response.json();
-
-        const thirtyDaysAgo = new Date();
-        thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-
-        const filteredEvents = data
-          .filter((event) => {
-            const eventDate = new Date(event.created_at);
-            const isRecent = eventDate > thirtyDaysAgo;
-            const isCorrectType = event.type === "PushEvent" || event.type === "CreateEvent";
-            return isRecent && isCorrectType;
-          })
-          .slice(0, 5);
-
-        setEvents(filteredEvents);
-      } catch (err) {
-        console.error("GitHub Tracker Error:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchGithubData();
-  }, [username]);
-
-  const getEventActivity = (event: GithubEvent) => {
-    const isPrivate = !event.public;
-    const repoContext = isPrivate ? "an internal repository" : "main";
-
-    if (event.type === "PushEvent") {
-      const count = event.payload.size || 1;
-      return `Pushed ${count} ${count === 1 ? 'commit' : 'commits'} to ${repoContext}`;
-    }
-
-    if (event.type === "CreateEvent") {
-      if (event.payload.ref_type === "repository") {
-        return `Initialized a new ${isPrivate ? "private " : ""}repository`;
-      }
-      return `Created branch "${event.payload.ref}" in ${repoContext}`;
-    }
-    return "Updated repository";
-  };
+const GithubSection: React.FC<GithubSectionProps> = ({ showFeed = true, compact = false }) => {
+  const { resolvedTheme } = useTheme();
+  const { data, isPending } = useGithubEvents();
+  const events = data?.events ?? [];
 
   return (
     <section className="mb-12">
@@ -100,63 +29,68 @@ const GithubSection: React.FC = () => {
         icon={<i className="fa-brands fa-github"></i>}
         title="Github Activity"
         linkText="Follow"
-        linkHref={`https://github.com/${username}`}
+        linkHref={`https://github.com/${GITHUB_USERNAME}`}
       />
 
-      {/* 3. The Contribution Graph Wrapper */}
-      <div className="mt-6 p-4 rounded-xl border border-border bg-card/50 overflow-hidden shadow-sm github-calendar-wrapper">
-        <GitHubCalendar 
-          username={username}
-          theme={githubTheme}
-          colorScheme="dark"
-          blockSize={12}
-          blockMargin={4}
-          fontSize={12}
+      <div
+        className={`mt-6 p-4 rounded-xl border border-border bg-card/50 shadow-sm github-calendar-wrapper ${
+          compact ? "overflow-x-hidden flex justify-center !px-3" : "overflow-hidden"
+        }`}
+      >
+        <GitHubCalendar
+          username={GITHUB_USERNAME}
+          theme={CALENDAR_THEME}
+          colorScheme={resolvedTheme}
+          blockSize={compact ? 10 : 12}
+          blockMargin={compact ? 2.5 : 4}
+          fontSize={compact ? 12 : 12}
         />
       </div>
 
-      {/* Divider / Label */}
-      <div className="mt-10 mb-4 text-[10px] uppercase tracking-[0.2em] font-bold opacity-30">
-        Recent Activity Feed
-      </div>
+      {showFeed && (
+        <>
+      <div className="mt-10 mb-4 text-[10px] uppercase tracking-[0.2em] font-bold opacity-30">Recent Activity Feed</div>
 
       <div className="writing space-y-8">
-        {loading ? (
+        {isPending ? (
           <div className="bio animate-pulse">Syncing with GitHub...</div>
         ) : events.length > 0 ? (
           events.map((event) => {
-            const isPrivate = !event.public;
-            const repoName = event.repo.name.split("/")[1];
-
+            const repoName = event.repo.split("/")[1];
             return (
               <div key={event.id} className="post group">
                 <div className="flex items-center justify-between mb-1">
                   <div className="flex items-center gap-2">
-                    <i className={`fa ${event.type === 'CreateEvent' ? 'fa-code-fork' : 'fa-code'} text-[10px] opacity-40`}></i>
-                    {isPrivate ? (
+                    <i className={`fa ${event.type === "CreateEvent" ? "fa-code-fork" : "fa-code"} text-[10px] opacity-40`}></i>
+                    {event.isPublic ? (
+                      <a
+                        href={`https://github.com/${event.repo}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="link font-bold text-sm"
+                      >
+                        {repoName}
+                      </a>
+                    ) : (
                       <span className="text-sm font-bold text-muted-foreground/60 flex items-center gap-1.5">
                         <i className="fa fa-lock text-[10px]"></i> Private Project
                       </span>
-                    ) : (
-                      <a href={`https://github.com/${event.repo.name}`} target="_blank" rel="noreferrer" className="link font-bold text-sm">
-                        {repoName}
-                      </a>
                     )}
                   </div>
                   <time className="text-[10px] text-muted-foreground uppercase tracking-widest font-semibold">
-                    {new Date(event.created_at).toLocaleDateString(undefined, { month: "short", day: "numeric" })}
+                    {new Date(event.createdAt).toLocaleDateString(undefined, { month: "short", day: "numeric" })}
                   </time>
                 </div>
-                <p className="markdown text-xs opacity-80">{getEventActivity(event)}</p>
+                <p className="markdown text-xs opacity-80">{event.summary}</p>
               </div>
             );
           })
         ) : (
-          <p className="bio italic text-sm text-muted-foreground">
-            No activity detected in the last 30 days.
-          </p>
+          <p className="bio italic text-sm text-muted-foreground">No activity detected in the last 30 days.</p>
         )}
       </div>
+        </>
+      )}
     </section>
   );
 };

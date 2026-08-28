@@ -1,4 +1,6 @@
-const Header = () => {
+import ThemeToggle from "@/components/ThemeToggle";
+
+const Header = ({ showThemeToggle = true }: { showThemeToggle?: boolean }) => {
   return (
     <header className="header">
       <div className="dp-outer-container">
@@ -75,6 +77,7 @@ const Header = () => {
           <a href="mailto:avaneeshjoshi@berkeley.edu" className="btn" aria-label="Email">
             <i className="fa fa-envelope"></i>
           </a>
+          {showThemeToggle && <ThemeToggle />}
         </div>
         </div>
       </div>

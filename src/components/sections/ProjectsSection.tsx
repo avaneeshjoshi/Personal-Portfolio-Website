@@ -1,45 +1,65 @@
+import { formatDistanceToNowStrict } from "date-fns";
 import SectionHeader from "../SectionHeader";
 import ContentCard from "../ContentCard";
+import { useProjects } from "@/hooks/use-github";
+import { GITHUB_USERNAME } from "@/data/projects";
+import type { RepoStats } from "@/lib/github/types";
 
-const projectItems = [
-  {
-    image: "https://cdn2.steamgriddb.com/icon/066e25a0712b306a9b95230f6ec4a051.ico",
-    title: "Balatro-RL",
-    description: "Live-game Balatro agent with a Lua/Python bridge, Gymnasium env, BalatroBench pipeline, and masked planner",
-    href: "https://github.com/avaneeshjoshi/Balatro-RL",
-  },
-  {
-    image: "https://fmanavehsizxybddlxtr.supabase.co/storage/v1/object/sign/Axlerate/Group%208.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9lZTc3ZjM5NS02NTdlLTQyMTMtOWQ4NS0zMTgyNWJlYzJlMzkiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJBeGxlcmF0ZS9Hcm91cCA4LnBuZyIsImlhdCI6MTc2NjQ5MTczMCwiZXhwIjoxODkyNjM1NzMwfQ.DHWdPH0idNlC4bJXA2lDMCMRko8aurg-n_waP5MM-3M",
-    title: "Axlerate",
-    description: "Unified math/ML workspace with context-aware logic retrieval via Graph RAG",
-    href: "https://github.com/avaneeshjoshi/Axlerate",
-  },
-  {
-    image: "https://w7.pngwing.com/pngs/904/441/png-transparent-computer-icons-waiter-meal-waiter-service-public-relations-logo.png",
-    title: "Host AI",
-    description: "Restaurant table management system using YOLOv8 and GPT-4V with real-time floor plan processing via Flask.",
-    href: "https://github.com/avaneeshjoshi/PocketHost",
-  },
-  {
-    image: "https://www.iconpacks.net/icons/2/free-tree-icon-1578-thumb.png",
-    title: "Forage",
-    description: "Crop recommendation platform using XGBoost with climate and botanical analysis via Flask-PostgreSQL",
-    href: "https://github.com/avaneeshjoshi/Forage-New",
-  },
-];
+const RepoMeta = ({ stats }: { stats: RepoStats }) => (
+  <>
+    <span title="Stars">
+      <i className="fa-solid fa-star text-[9px]"></i> {stats.stars}
+    </span>
+    {stats.forks > 0 && (
+      <span title="Forks">
+        <i className="fa-solid fa-code-fork text-[9px]"></i> {stats.forks}
+      </span>
+    )}
+    {stats.primaryLanguage && (
+      <span className="inline-flex items-center gap-1">
+        <span
+          className="inline-block w-2 h-2 rounded-full"
+          style={{ backgroundColor: stats.primaryLanguage.color ?? "currentColor" }}
+        />
+        {stats.primaryLanguage.name}
+      </span>
+    )}
+    <span>pushed {formatDistanceToNowStrict(new Date(stats.pushedAt), { addSuffix: true })}</span>
+  </>
+);
 
-const ProjectsSection = () => {
+interface ProjectsSectionProps {
+  /** Base path for write-up pages (default "/work"). */
+  workPath?: string;
+}
+
+const ProjectsSection = ({ workPath }: ProjectsSectionProps = {}) => {
+  const { projects } = useProjects({ featuredOnly: true, workPath });
+
   return (
     <section className="mb-12">
       <SectionHeader
-        icon={<i className="fa fa-code" style={{ fontSize: '10px' }}></i>}
+        icon={<i className="fa fa-code" style={{ fontSize: "10px" }}></i>}
         title="Projects"
         linkText="Github"
-        linkHref="https://github.com/avaneeshjoshi"
+        linkHref={`https://github.com/${GITHUB_USERNAME}`}
       />
       <div className="card-grid">
-        {projectItems.map((item) => (
-          <ContentCard key={item.title} {...item} />
+        {projects.map((p) => (
+          <ContentCard
+            key={p.repo}
+            image={p.image}
+            title={p.title}
+            description={p.description}
+            href={p.href}
+            internal={p.internal}
+            meta={
+              <>
+                {p.stats && <RepoMeta stats={p.stats} />}
+                {p.internal && <span>read more →</span>}
+              </>
+            }
+          />
         ))}
       </div>
     </section>

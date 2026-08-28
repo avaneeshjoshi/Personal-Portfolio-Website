@@ -77,7 +77,7 @@ const AboutSection = () => {
         <p>
           I came to machine learning from an art background, and I still approach building the same way: obsessively, and caring how the thing feels, not just whether it works. San Francisco is where I've found the work and the people I want to be around, and I'm not planning to leave.
         </p>
-      </div>
+    </div>
     </section>
   );
 };

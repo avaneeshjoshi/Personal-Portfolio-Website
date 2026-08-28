@@ -178,9 +178,7 @@ const isPointerOverAnchor = (anchor: HTMLAnchorElement, point?: { x: number; y: 
 };
 
 const getPointFromEvent = (event: Event) =>
-  "clientX" in event && typeof event.clientX === "number"
-    ? { x: event.clientX, y: event.clientY }
-    : undefined;
+  event instanceof MouseEvent ? { x: event.clientX, y: event.clientY } : undefined;
 
 const LinkPreview = () => {
   const [preview, setPreview] = useState<PreviewState | null>(null);
