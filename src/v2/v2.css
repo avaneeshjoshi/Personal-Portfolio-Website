@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+/* v2 design tokens — scoped so the classic site is untouched. */
+.v2 {
+  --v2-bg: #f6f2ea;
+  --v2-fg: #1a1815;
+  --v2-fg-muted: #6b665c;
+  --v2-accent: #c4633f;
+  --v2-hairline: rgba(26, 24, 21, 0.14);
+  --v2-card: #fbf8f2;
+  --v2-placeholder: #ece6da;
+  --v2-placeholder-fg: rgba(26, 24, 21, 0.28);
+
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  background: var(--v2-bg);
+  color: var(--v2-fg);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.dark .v2 {
+  --v2-bg: #100f0e;
+  --v2-fg: #edebe5;
+  --v2-fg-muted: #9c978c;
+  --v2-accent: #d4744f;
+  --v2-hairline: rgba(237, 235, 229, 0.12);
+  --v2-card: #171513;
+  --v2-placeholder: #1a1816;
+  --v2-placeholder-fg: rgba(237, 235, 229, 0.22);
+}
+
+/* Reset global base styles from index.css that leak into v2 */
+.v2 a {
+  color: inherit;
+  transition: color 0.15s ease;
+}
+.v2 h1,
+.v2 h2,
+.v2 h3 {
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.v2 .mono {
+  font-family: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.v2 .mono.stat-number {
+  font-size: 2rem;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+@media (min-width: 768px) {
+  .v2 .mono.stat-number {
+    font-size: 2.5rem;
+  }
+}
+.v2 .mono.placeholder-number {
+  font-size: 11px;
+}
+
+.v2 .v2-link {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.v2 .v2-link:hover,
+.v2 .v2-link[aria-current="page"] {
+  border-bottom-color: currentColor;
+}
+
+.v2 .v2-card {
+  background: var(--v2-card);
+  border: 1px solid var(--v2-hairline);
+  border-top-width: 2px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.v2 .v2-card:hover {
+  border-color: rgba(212, 116, 79, 0.35);
+}
+.v2 .v2-card:hover .v2-card-title {
+  color: var(--v2-accent);
+}
+.v2 .v2-card-media {
+  background: var(--v2-placeholder);
+  color: var(--v2-placeholder-fg);
+}
+.v2 .v2-card-media img {
+  transition: filter 0.3s ease;
+}
+.v2 .v2-card:hover .v2-card-media img {
+  filter: brightness(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v2 * {
+    transition: none !important;
+  }
+}
