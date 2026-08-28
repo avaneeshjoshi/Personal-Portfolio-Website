@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap');
+
+/* v3 reuses every token/class from index.css; extras live here. */
+.v3-serif {
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+  font-optical-sizing: auto;
+}
+.v3-photo {
+  filter: saturate(0.9);
+  transition: filter 0.3s ease;
+}
+.v3-photo:hover {
+  filter: saturate(1);
+}
+.v3-nav-btn {
+  text-decoration: none;
+}
+.v3-nav-btn.is-active {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--text-primary));
+  font-weight: 500;
+}
+
+.v3-back-to-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 40;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.v3-back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+@media print {
+  .v3-back-to-top {
+    display: none;
+  }
+}
+
+@keyframes v3-reel {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.v3-reel {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.v3-reel-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  padding: 8px 4px;
+  animation: v3-reel var(--v3-reel-duration, 60s) linear infinite;
+}
+
+/* Hovered piece comes forward, the rest recede */
+.v3-reel figure {
+  transition: transform 0.25s ease, opacity 0.25s ease, filter 0.25s ease;
+  outline: none;
+}
+.v3-reel figure img {
+  transition: box-shadow 0.25s ease;
+}
+.v3-reel:hover figure:not(:hover),
+.v3-reel:focus-within figure:not(:focus-visible) {
+  opacity: 0.55;
+  filter: saturate(0.7);
+}
+.v3-reel figure:hover,
+.v3-reel figure:focus-visible {
+  transform: translateY(-4px) scale(1.04);
+  z-index: 1;
+  opacity: 1;
+  filter: none;
+}
+.v3-reel figure:hover img,
+.v3-reel figure:focus-visible img {
+  box-shadow: var(--card-shadow-hover);
+}
+
+.v3-reel:hover .v3-reel-track,
+.v3-reel:focus-within .v3-reel-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .v3-reel {
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .v3-reel-track {
+    animation: none;
+  }
+  .v3-reel figure:hover,
+  .v3-reel figure:focus-visible {
+    transform: none;
+  }
+}
+
+.v3-poster-row {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding: 6px 2px 10px;
+  scrollbar-width: thin;
+}
+.v3-poster-row > * {
+  scroll-snap-align: start;
+  flex: 0 0 calc((100% - 12px * 2.5) / 3.5);
+  width: auto !important;
+}
+@media (min-width: 640px) {
+  .v3-poster-row > * {
+    flex-basis: calc((100% - 12px * 5) / 6);
+  }
+}
+
+.v3-globe canvas {
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  contain: layout paint size;
+}
+.v3-globe canvas:active {
+  cursor: grabbing;
+}
+
+/* Globe pins (HTML, positioned over the canvas every frame) */
+.v3-pin {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  will-change: transform, opacity;
+}
+.v3-pin::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  border: 1.5px solid hsl(var(--primary));
+  background: hsl(var(--background) / 0.85);
+  box-shadow: 0 0 0 2px hsl(var(--primary) / 0.18), 0 1px 3px rgba(0, 0, 0, 0.35);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+.v3-pin::after {
+  content: "";
+  position: absolute;
+  inset: 7.5px;
+  border-radius: 50%;
+  background: hsl(var(--primary));
+  transition: transform 0.15s ease;
+}
+.v3-pin:hover::before,
+.v3-pin:focus-visible::before,
+.v3-pin.is-active::before {
+  transform: scale(1.5);
+}
+.v3-pin.is-active::before {
+  background: hsl(var(--primary));
+}
+.v3-pin.is-active::after {
+  background: hsl(var(--primary-foreground));
+}
+.v3-pin:focus-visible {
+  outline: none;
+}
+.v3-pin-tip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 2px);
+  transform: translate(-50%, 4px);
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 5px 8px;
+  border-radius: 6px;
+  color: hsl(var(--btn-text));
+  background-color: hsl(var(--btn-bg));
+  box-shadow: var(--btn-shadow);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.v3-pin-tip-region {
+  font-weight: 400;
+  color: hsl(var(--text-muted));
+}
+.v3-pin:hover .v3-pin-tip,
+.v3-pin:focus-visible .v3-pin-tip,
+.v3-pin.is-active .v3-pin-tip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ---- Experience timeline ---- */
+.v3-tl {
+  position: relative;
+  padding: 0.25rem 0 0.5rem;
+}
+.v3-tl::before {
+  /* the spine */
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1rem;
+  width: 1px;
+  background: hsl(var(--border));
+}
+.v3-tl-year {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0.25rem 0 1.5rem;
+}
+.v3-tl-year span {
+  position: relative;
+  left: 0;
+  transform: translateX(calc(1rem - 50%));
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: hsl(var(--text-primary));
+  background: hsl(var(--background));
+  padding: 0 0.75rem;
+}
+.v3-tl-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  grid-template-areas: "node date" "node card";
+  column-gap: 0.75rem;
+  margin: 0.75rem 0 1.25rem;
+}
+
+.v3-tl-node {
+  grid-area: node;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 1.55rem;
+}
+.v3-tl-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 1.5px;
+  background: hsl(var(--background));
+  box-shadow: 0 0 0 1.5px hsl(var(--primary));
+}
+.v3-tl-dot.is-current {
+  background: hsl(var(--primary));
+  box-shadow: 0 0 0 1.5px hsl(var(--primary)), 0 0 0 5px hsl(var(--primary) / 0.15);
+}
+.v3-tl-date-cell {
+  grid-area: date;
+  align-self: end;
+}
+.v3-tl-card-cell {
+  grid-area: card;
+}
+.v3-tl-card {
+  padding: 0.25rem 0;
+}
+.v3-tl-card:hover .card-image {
+  box-shadow: var(--card-shadow-hover);
+  transform: scale(1.02);
+}
+
+@media (min-width: 640px) {
+  .v3-tl::before {
+    left: 50%;
+  }
+  .v3-tl-year {
+    justify-content: center;
+  }
+  .v3-tl-year span {
+    transform: none;
+  }
+  .v3-tl-row {
+    grid-template-columns: minmax(0, 1fr) 2rem minmax(0, 1fr);
+    column-gap: 1rem;
+    margin: 0.25rem 0 1.5rem;
+  }
+
+  .v3-tl-row.is-left {
+    grid-template-areas: "card node date";
+  }
+  .v3-tl-row.is-right {
+    grid-template-areas: "date node card";
+  }
+  .v3-tl-node {
+    padding-top: 0.75rem;
+  }
+  .v3-tl-date-cell {
+    align-self: start;
+    padding-top: 0.45rem;
+  }
+  .v3-tl-row.is-right .v3-tl-date-cell {
+    text-align: right;
+  }
+}
+
+/* Home / school pins: small icon chip instead of the square */
+.v3-pin.is-tagged::before,
+.v3-pin.is-tagged::after {
+  display: none;
+}
+.v3-pin.is-tagged .v3-pin-icon {
+  position: absolute;
+  inset: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 8px;
+  color: hsl(var(--primary));
+  background: hsl(var(--background));
+  box-shadow: 0 0 0 1.5px hsl(var(--primary)), 0 1px 3px rgba(0, 0, 0, 0.35);
+  transition: transform 0.15s ease;
+}
+.v3-pin.is-tagged:hover .v3-pin-icon,
+.v3-pin.is-tagged:focus-visible .v3-pin-icon,
+.v3-pin.is-tagged.is-active .v3-pin-icon {
+  transform: scale(1.3);
+}
+.v3-pin.is-tagged.is-active .v3-pin-icon {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+/* Poster hover: dim the cover, reveal title + subtitle */
+.v3-poster img {
+  transition: filter 0.25s ease, transform 0.25s ease;
+}
+.v3-poster-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2px;
+  padding: 8px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.15) 60%, transparent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+.v3-poster-title {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+}
+.v3-poster-sub {
+  font-size: 10px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.72);
+}
+.v3-poster:hover img,
+.v3-poster:focus-visible img {
+  filter: grayscale(0.6) brightness(0.55);
+}
+.v3-poster:hover .v3-poster-overlay,
+.v3-poster:focus-visible .v3-poster-overlay {
+  opacity: 1;
+}
+.v3-poster:focus-visible {
+  outline: none;
+}
+
+/* ---- Custom cursor (fine pointers only) ---- */
+html.v3-has-cursor,
+html.v3-has-cursor * {
+  cursor: none !important;
+}
+.v3-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 26px;
+  height: 26px;
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform;
+  --cursor: hsl(var(--text-primary));
+}
+.v3-cursor::before {
+  /* the ring / dot */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--cursor);
+  background: transparent;
+  box-shadow: 0 0 0 1px hsl(var(--background) / 0.6);
+  transition: inset 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.22s ease, border-color 0.22s ease;
+}
+.v3-cursor::after {
+  /* lock-on pulse */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--cursor);
+  opacity: 0;
+}
+.v3-cursor.is-visible {
+  opacity: 1;
+}
+.v3-cursor.is-locked::before {
+  inset: 8px;
+  background: var(--cursor);
+  border-color: var(--cursor);
+}
+.v3-cursor.is-down::before {
+  inset: 10px;
+}
+.v3-cursor.is-pulse::after {
+  animation: v3-cursor-pulse 0.45s ease-out;
+}
+@keyframes v3-cursor-pulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v3-cursor::before {
+    transition: none;
+  }
+}

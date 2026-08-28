@@ -7,13 +7,8 @@ import SpeakingSection from "@/components/sections/SpeakingSection";
 // import NewsSection from "@/components/sections/NewsSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import GithubSection from "@/components/sections/GithubSection";
+import { scrollToTop } from "@/lib/scroll";
 
-const scrollToTop = () => {
-  const prefersReducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)",
-  ).matches;
-  window.scrollTo({ top: 0, behavior: prefersReducedMotion ? "auto" : "smooth" });
-};
 
 const Index = () => {
   useEffect(() => {
